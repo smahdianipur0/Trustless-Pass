@@ -1,0 +1,39 @@
+cargo new rust_lib --lib
+
+cd rust_lib
+
+cargo add wasm-bindgen
+
+cargo install wasm-bindgen-cli
+
+wasm-bindgen --version (chek with cargo.tmol dependencies )
+
+
+> src > lib >
+	use wasm_bindgen::prelude::wasm_bindgen;
+	#[wasm_bindgen]
+	pub fn ....
+
+> cargo.tmol >
+	[profile.release]
+	lto = true
+	strip = true
+	[lib]
+	crate-type = ["cdylib"]
+
+cargo build --release --target=wasm32-unknown-unknown
+
+wasm-bindgen target/wasm32-unknown-unknown/release/rust_lib.wasm --out-dir pkg
+
+copy pkg into the svelte>ser > lib
+
+> svelte > src > routes > +page.svelte
+	import { times_two } from "$lib/pkg/sum";
+
+npm i -D vite-plugin-wasm
+npm i -D vite-plugin-top-level-await
+
+> vite.config.ts
+	import wasm from "vite-plugin-wasm";
+	import topLevelAwait from "vite-plugin-top-level-await";
+	> plugins ,wasm(), topLevelAwait()

@@ -22,6 +22,7 @@
   	--z-layer-higher :3;
   	--z-layer-middle :2;
   	--regular-font : 16px;
+  	--small-font:14px;
   	--small-portion:50px;
   	--small-clickable:25px;
   	--small-text:40px;
@@ -79,6 +80,8 @@ html, body {
 	border-radius: var(--radiu-b);
 	padding: 15px;
 	padding-inline: 15px;
+	margin-bottom: 50px;
+	font-family: sans-serif;
   	
 }
 
@@ -164,8 +167,8 @@ button.main:hover {
 
   .toggle-text {
     background: none ;
-	font-size: var(--regular-font);
-	padding: var(--default-padding);
+		font-size: var(--small-font);
+		padding: var(--default-padding);
   	border-radius: var(--radiu-a);	
   	border: 1px solid  var(--focus-color);
     user-select: none; /* Prevent text selection */

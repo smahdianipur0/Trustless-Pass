@@ -121,15 +121,16 @@ button.main{
 	padding:var(--default-padding);
   	border-radius: var(--radiu-a);	
   	border: 1px solid  transparent;
+  	color: var(--accent-color);
  	}
 
 button.main:active {
   	background: var(--btn-active-color);
 	}
-
+/*
 button.main:hover {
 	border: 1px transparent;
-	}
+	}*/
 
 
 button.disabled {
@@ -191,13 +192,15 @@ a {
     user-select: none; 
     cursor: pointer;
     background: var(--tertiary-color);
+    color: var(--focus-color);
   }
 
 
   .toggle-on {
   	border: 1px solid transparent;
     background: var(--btn-active-color);
-    filter: drop-shadow( var(--drop-shadow));
+    color: var(--accent-color);
+/*    filter: drop-shadow( var(--drop-shadow));*/
   }
 
 /*Toggle */

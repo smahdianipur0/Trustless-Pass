@@ -79,6 +79,7 @@ a {
   text-decoration: none; 
   height: 20px;
   margin:10px 50px; 
+  color: var(--accent-color);
 
 }
 

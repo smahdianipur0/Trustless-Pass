@@ -72,13 +72,13 @@
 <div class="btn-group  "> 
 
 				
-	      	<button  use:copy={text}  class="main" > <a href="/qrcode#" on:click={toggleToast}> Copy </button>
-					<button class="main" on:click={toggleQR}> Show QR Code</button>
+	      	<button name="copy" use:copy={text}  class="main" > <a href="/qrcode#" on:click={toggleToast}> Copy </button>
+					<button name="Show QR Code" class="main" on:click={toggleQR}> Show QR Code</button>
 				</div>
 				{:else}
 				<div class="btn-group  "> 
-					<button class="main disabled "> Copy</button>
-					<button class="main disabled "> Show QR Code</button>
+					<button name="copy" class="main disabled "> Copy</button>
+					<button name="Show QR Code" class="main disabled "> Show QR Code</button>
 				</div>
 
 				{/if}

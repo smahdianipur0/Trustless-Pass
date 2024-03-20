@@ -28,8 +28,8 @@
 
 
   <div class="box">
-      <a href="#/" on:click={toggleDrawer}>
-	       <button class="menu" on:click={rotateLines}>
+      <a aria-label="Menu Drawer" href="#/" on:click={toggleDrawer}>
+	       <button name="Menu Drawer" class="menu" on:click={rotateLines}>
   		      <div class="line line1" class:rotate={rotate}></div>
  		        <div class="line line2" class:rotate={rotate}></div>
 	       </button>
@@ -41,12 +41,12 @@
     <div class="drawer dark glass" class:open={isDrawerOpen}>
       
        
-      <a href="/#/" on:click={toggleDrawer} on:click={rotateLines}><button class="box-slim">Home</button></a>
+      <a  href="/#/" on:click={toggleDrawer} on:click={rotateLines}><button name="Home" class="box-slim">Home</button></a>
     
-      <a href="/qrcode#/" on:click={toggleDrawer} on:click={rotateLines} ><button class="box-slim">Generate QR Code</button></a>
+      <a href="/qrcode#/" on:click={toggleDrawer} on:click={rotateLines} ><button name="Generate QR Code" class="box-slim">Generate QR Code</button></a>
 
 
-      <a href="/about#/" on:click={toggleDrawer} on:click={rotateLines} ><button class="box-slim">About</button></a>
+      <a href="/about#/" on:click={toggleDrawer} on:click={rotateLines} ><button name="About" class="box-slim">About</button></a>
       
      
 	
@@ -72,6 +72,7 @@
   border: none;
   cursor: pointer;
   text-align: start;
+  color: var(--accent-color);
 
 }
 
@@ -79,7 +80,6 @@ a {
   text-decoration: none; 
   height: 20px;
   margin:10px 50px; 
-  color: var(--accent-color);
 
 }
 

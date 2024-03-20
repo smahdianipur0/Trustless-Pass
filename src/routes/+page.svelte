@@ -138,7 +138,7 @@
 					<div class="flex">
 					<div class="length">Length: {password_length} </div> 
 					<div>
-							<input class="slider" type="range" 
+							<input aria-label="password length" class="slider" type="range" 
 							     style="--sliderBackground: linear-gradient(to right, var(--accent-color) 0%, var(--accent-color)  
 							                	{((password_length-12) / 8) * 100}%, var(--secondary-color) 
 							             	{((password_length-12) / 8) * 100 + 1}%, var(--secondary-color)  100%)"
@@ -166,13 +166,13 @@
 
 					<div class="tgl-group " >
 
-						<button class="toggle-text {capitalize_first_letter ? 'toggle-on' : ''}  " 
+						<button name="Capitalize" class="toggle-text {capitalize_first_letter ? 'toggle-on' : ''}  " 
 						on:click={f_capitalize_first_letter}>Capitalize</button>
 
-						<button class="toggle-text {add_number ? 'toggle-on' : ''} " 
+						<button name="Numbers" class="toggle-text {add_number ? 'toggle-on' : ''} " 
 						on:click={f_add_number}>Numbers</button>
 
-						<button class="toggle-text {add_special_char ? 'toggle-on' : ''} " 
+						<button name="specialcharacters" class="toggle-text {add_special_char ? 'toggle-on' : ''} " 
 						on:click={f_add_special_char}>!@#$%&...</button>
 					 
 					</div>
@@ -185,10 +185,10 @@
 			<div class="flex">
 
 				<form autocomplete="off">
-						<input type="text" autocomplete="off" class="input dark glass " readonly value="{password}">	
+						<input aria-label="password" type="text" autocomplete="off" class="input dark glass " readonly value="{password}">	
 				</form>
 					<a href="/#" on:click={toggleToast}>
-	      			 <button use:copy={password}  class="main" > Copy </button>
+	      			 <button name="Copy" use:copy={password}  class="main" > Copy </button>
 					</a>
 <br>
 
@@ -299,13 +299,13 @@
 
 				<div class="btn-group  "> 
 					
-	      	<button  use:copy={result_e}  class="main" > <a href="/#" on:click={toggleToast}> Copy </button>
-					<button class="main" on:click={toggleQR_e}> Show QR Code</button>
+	      	<button name="Copy" use:copy={result_e}  class="main" > <a href="/#" on:click={toggleToast}> Copy </button>
+					<button name="Show QR Code" class="main" on:click={toggleQR_e}> Show QR Code</button>
 				</div>
 				{:else}
 				<div class="btn-group  "> 
-					<button class="main disabled "> Copy</button>
-					<button class="main disabled "> Show QR Code</button>
+					<button name="Copy" class="main disabled "> Copy</button>
+					<button name="Show QR Code" class="main disabled "> Show QR Code</button>
 				</div>
 
 				{/if}
@@ -343,13 +343,13 @@
 
 				<div class="btn-group  "> 
 					
-	      	<button  use:copy={result_d}  class="main" > <a href="/#" on:click={toggleToast}> Copy </button>
-					<button class="main" on:click={toggleQR_d}> Show QR Code</button>
+	      	<button name="Copy" use:copy={result_d}  class="main" > <a href="/#" on:click={toggleToast}> Copy </button>
+					<button  name="Show QR Code" class="main" on:click={toggleQR_d}> Show QR Code</button>
 				</div>
 				{:else}
 				<div class="btn-group  "> 
-					<button class="main disabled "> Copy</button>
-					<button class="main disabled "> Show QR Code</button>
+					<button name="Copy" class="main disabled "> Copy</button>
+					<button name="Show QR Code" class="main disabled "> Show QR Code</button>
 				</div>
 
 				{/if}

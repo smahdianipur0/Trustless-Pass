@@ -80,12 +80,33 @@
   $: strength2 = calculate_password_strength2(password);
 
 
+	let Key = '';
+  $: Key_count = count_characters(Key);
 
-	// //toggle
-  // let toggle = false;
-  // function toggleBackground() {
-  //   toggle = !toggle;
-  // }
+  let IV = '';
+  $: IV_count = count_characters(IV);
+
+  let plain_text = '';
+  let auto_plain = false;
+  function f_auto_plain() {
+    auto_plain = !auto_plain; } 
+
+  
+
+  $: if (auto_plain) {
+  plain_text = password; 
+  } else {
+    plain_text = '';
+  }
+
+
+  $: result_e = encrypt(Key,IV,plain_text);
+  let cipher_text = '';
+  let result_d = '';
+  $: result_d = decrypt(Key,IV,cipher_text);
+
+
+
 
 
 </script>
@@ -209,12 +230,27 @@
 <div class="card-2">
 	
 			<form autocomplete="off">
-				<div class="row-box">
-					<input type="text" autocomplete="off" class="input dark glass" name="friendname" placeholder="firiend name..">
+				
+				<div class="flex">
+					<input type="text" autocomplete="off" class="input dark glass" name="Key"
+					 placeholder="Key" bind:value={Key}>
+						 <span class="key-indicator">
+					    {#if Key}
+					      {Key_count}
+					    {/if}
+					   </span>
 				</div>
-					<div class="row-box">
-					<input type="text" autocomplete="off" class="input dark glass" name="schoolnmae" placeholder="school name..">
+				
+					<div class="flex">
+					<input type="text" autocomplete="off" class="input dark glass" name="IV" 
+					placeholder="IV" bind:value={IV}>
+					<span class="key-indicator">
+					    {#if IV}
+					      {IV_count}
+					    {/if}
+					   </span>
 				</div>
+
 			</form>
 
 </div>
@@ -228,16 +264,19 @@
   			<br>
 
 
-						<label class="check">One
-						  <input type="checkbox" >
+						<label class="check">Use Password
+						  <input type="checkbox" on:click={f_auto_plain} >
 						  <span class="checkmark"></span>
 						</label>
+						{#if auto_plain == false}
+							<textarea  class="txt-area dark glass" rows="2"
+							 bind:value={plain_text} placeholder="Plain Text"></textarea>
+						{/if}
 
-				<textarea  class="txt-area dark glass" rows="2">Hi
-				</textarea>
-				<textarea  class="txt-area dark glass" rows="2" readonly>Hi
-				</textarea>
-
+						{#if Key && IV}
+				<textarea  class="txt-area dark glass" rows="2" readonly
+				bind:value={result_e}></textarea>
+						{/if}
 
 				<div class="btn-group"> 
 					<button class="main "> click</button>
@@ -293,14 +332,26 @@
 
 
 
-.input{	
+/*.input{	
 	width: auto;
-}
+
+}*/
+
+
 
 .row-box{
 	height: 40px;
+	display: flex;
+	justify-content: space-between;
 }
 
-
+  .key-indicator {
+    position: absolute;
+    right: 15px;
+		top: 25px;
+    transform: translateY(-50%);
+    color: #777;
+    pointer-events: none;
+  }
 
 </style>

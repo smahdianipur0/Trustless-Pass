@@ -5,12 +5,6 @@
 	import { copy }  from 'svelte-copy';
 
 
-	//slider
- 	$: sliderStyle = `linear-gradient(to right, rgba(250, 250, 250,0.7) 0%, 
- 	rgba(250, 250, 250,0.6)
- 	${((password_length-12) / 8) * 100}%, rgba(70, 70, 70,0.4) 
- 	${((password_length-12) / 8) * 100}%, rgba(70, 70, 70,0.5) 100%)`;
-
 
 //Toast:
 	 import { onMount } from 'svelte';
@@ -136,7 +130,10 @@
 					<div class="flex">
 					<div class="length">Length: {password_length} </div> 
 					<div>
-							<input class="slider" type="range" style="--sliderBackground: {sliderStyle}"	
+							<input class="slider" type="range" 
+							     style="--sliderBackground: linear-gradient(to right, var(--accent-color) 0%, var(--accent-color)  
+							                	{((password_length-12) / 8) * 100}%, var(--secondary-color) 
+							             	{((password_length-12) / 8) * 100 + 1}%, var(--secondary-color)  100%)"
 						 		bind:value={password_length} min="12" max="20" />
 
 						 	<p class="flex-slider">

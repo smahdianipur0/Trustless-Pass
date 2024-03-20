@@ -27,7 +27,7 @@
   	--small-clickable:25px;
   	--small-text:40px;
   	--slider-width: 200px;
-  	--default-padding : 5.5px 15px;
+  	--default-padding : 7px 15px;
 
 }
 
@@ -80,7 +80,7 @@ html, body {
 	border-radius: var(--radiu-b);
 	padding: 15px;
 	padding-inline: 15px;
-	margin-bottom: 50px;
+	margin-bottom: 25px;
 	font-family: sans-serif;
   	
 }
@@ -172,7 +172,9 @@ button.main:hover {
 		padding: var(--default-padding);
   	border-radius: var(--radiu-a);	
   	border: 1px solid  var(--focus-color);
-    user-select: none; /* Prevent text selection */
+    user-select: none; 
+    cursor: pointer;
+    background: var(--tertiary-color);
   }
 
 
@@ -376,11 +378,11 @@ button.main:hover {
     top: calc(50% + 4px); 
 }
   .line1.rotate {
-    transform: rotate(45deg) translate(0, 5.6px);
+    transform: rotate(-45deg) translate(0, 5.6px);
 
   }
   .line2.rotate {
-    transform: rotate(-45deg)translate(0, -5.6px);
+    transform: rotate(45deg)translate(0, -5.6px);
   }
 
 /*Menu button*/
@@ -600,6 +602,7 @@ button.main:hover {
   width: 5px;
   height: 12px;
   border: solid white;
+  border-radius: 2px;
   border-width: 0 2px 2px 0;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);

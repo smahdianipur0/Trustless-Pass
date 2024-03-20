@@ -1,8 +1,8 @@
 {
-  "name": "Template-Svelte",
-  "short_name": "Template",
-	"theme_color": "#383838",
-  "background_color": "#383838",
+  "name": "Trustless_Password",
+  "short_name": "Trustless_Pass",
+	"theme_color": "#000000",
+  "background_color": "#000000",
 	"display": "standalone",
   "start_url": "/",
   "icons": [

@@ -48,7 +48,7 @@
 
 
 
-<body  id ="display-toast">
+<div  id ="display-toast">
 <div class="card">
 <div class= "page">
 
@@ -95,7 +95,7 @@
     <div class="toast dark glass" class:opentoast={isToastOpen}> Copied 
 
 </div>
-</body>
+</div>
 
 
 

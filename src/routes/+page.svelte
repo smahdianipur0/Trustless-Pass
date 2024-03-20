@@ -29,10 +29,6 @@
   });
 
 
-	import { times_two } from "$lib/pkg/rust_lib";
-	let a = 16;
-	$: b = times_two(a).toString();
-
 
   //Rust Functions
   import { encrypt }                      from "$lib/pkg/rust_lib";
@@ -99,7 +95,19 @@
   let result_d = '';
   $: result_d = decrypt(Key,IV,cipher_text);
 
+//Qr code
+  import { QRCodeImage } from "svelte-qrcode-image";
 
+  let showQR_e = false;
+  let showQR_d = false;
+
+  function toggleQR_e() {
+    showQR_e = !showQR_e
+  }
+
+  function toggleQR_d() {
+    showQR_d = !showQR_d
+  }
 
 
 
@@ -210,7 +218,7 @@
  			 </div>
 
   <div class="tab__indicator" /></div>
-  																 <!-- Card -->
+  																 <!--invisible Card -->
 <br>
 	  {#if password }
     <p style = " font-size: 14px;" >{guess}</p>
@@ -221,7 +229,8 @@
 </div>
 
 </div>
- 																		<!-- Card -->	
+ 																		<!--invisible  Card -->	
+ 																		 <!-- Second Card -->
 
 <div class="card-1 dark glass small-shadow" > 
 <div class="card-2">
@@ -268,6 +277,10 @@
 						{#if auto_plain == false}
 							<textarea  class="txt-area dark glass" rows="2"
 							 bind:value={plain_text} placeholder="Plain Text"></textarea>
+							 {:else}
+
+							 <textarea  class="txt-area dark glass" rows="2" readonly
+							 value={plain_text} placeholder="Plain Text"></textarea>
 						{/if}
 
 						{#if Key && IV}
@@ -275,14 +288,30 @@
 				bind:value={result_e}></textarea>
 						{/if}
 
-				<div class="btn-group"> 
-					<button class="main "> click</button>
-					<button class="main "> click</button>
+				{#if Key && IV &&
+					result_e !== "IV is not 16 Characters" &&
+		      result_e !== "Key is not 16 Characters" &&
+		      result_e !== "Invalid Credentials"&&
+		      result_e !== ""}
 
+				<div class="btn-group  "> 
+					
+	      	<button  use:copy={result_e}  class="main" > <a href="/#" on:click={toggleToast}> Copy </button>
+					<button class="main" on:click={toggleQR_e}> Show QR Code</button>
+				</div>
+				{:else}
+				<div class="btn-group  "> 
+					<button class="main disabled "> Copy</button>
+					<button class="main disabled "> Show QR Code</button>
 				</div>
 
+				{/if}
+<div class="qr">
+{#if showQR_e && plain_text }
 
-  			
+					<QRCodeImage class="qr" text={result_e} width={160} height={160} margin={1} />
+					{/if}
+ </div>			
 
 
   		</div>
@@ -292,14 +321,47 @@
  			 <div class="tab__contents"> 
 			<br>
 
-  			<textarea  class="txt-area dark glass" rows="2" readonly>how you doing?
-				</textarea>
+  			
+						
+							 <textarea  class="txt-area dark glass" rows="2" 
+							 bind:value={cipher_text} placeholder="Cipher Text"></textarea>
+						
+
+						{#if Key && IV}
+				<textarea  class="txt-area dark glass" rows="2" readonly
+				bind:value={result_d}></textarea>
+						{/if}
+
+				{#if Key && IV &&
+					result_d !== "IV is not 16 Characters" &&
+		      result_d !== "Key is not 16 Characters" &&
+		      result_d !== "Invalid Credentials"&&
+		      result_d !== ""}
+
+				<div class="btn-group  "> 
+					
+	      	<button  use:copy={result_d}  class="main" > <a href="/#" on:click={toggleToast}> Copy </button>
+					<button class="main" on:click={toggleQR_d}> Show QR Code</button>
+				</div>
+				{:else}
+				<div class="btn-group  "> 
+					<button class="main disabled "> Copy</button>
+					<button class="main disabled "> Show QR Code</button>
+				</div>
+
+				{/if}
+<div class="qr">
+{#if showQR_d && cipher_text }
+
+					<QRCodeImage class="qr" text={result_d} width={160} height={160} margin={1} />
+					{/if}
+ </div>			
+
+
+  		
 
  			 </div>
 				<div class="tab__indicator" /></div>
-	
-
-
 
 </div>
 </div>
@@ -316,7 +378,6 @@
 <style>
 
 
-
 .flex-slider {
 	font-size: 10px;
 	padding: 0 2.5px;
@@ -328,20 +389,6 @@
 }
 
 
-
-/*.input{	
-	width: auto;
-
-}*/
-
-
-
-.row-box{
-	height: 40px;
-	display: flex;
-	justify-content: space-between;
-}
-
   .key-indicator {
     position: absolute;
     right: 15px;
@@ -350,5 +397,10 @@
     color: #777;
     pointer-events: none;
   }
+
+.qr{
+	margin-left: calc(50% - 80px);
+	margin-top: 20px;
+}
 
 </style>

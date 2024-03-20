@@ -51,7 +51,7 @@ html, body {
 	
 	display: grid;
 	gap:20px;
-	grid-template-columns: repeat(auto-fit,minmax(350px, 350px))  ;
+	grid-template-columns: repeat(auto-fit,350px)  ;
   	justify-content: center;
 	}
 
@@ -82,6 +82,7 @@ html, body {
 	padding-inline: 15px;
 	margin-bottom: 25px;
 	font-family: sans-serif;
+	
   	
 }
 
@@ -125,6 +126,17 @@ button.main:active {
 button.main:hover {
 	border: 1px solid var(--focus-color);
 	}
+
+
+button.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+a {
+  text-decoration: none; 
+  color: white;
+}
 
 /*button group*/
 
@@ -426,6 +438,7 @@ button.main:hover {
   display: inline-block;
   border: 1px solid transparent;
   border-radius: var(--radiu-a);
+  resize: vertical;
 }
 
 .txt-area:hover {

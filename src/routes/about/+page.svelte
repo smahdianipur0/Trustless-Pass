@@ -16,9 +16,7 @@
 	
 </script>
 
-<!-- #################################################################################################### -->
 
-<!-- SvelteKit Dynamic Header -->
 <svelte:head>
 	<title>About</title>
 	<meta name="description" content="About Page" />
@@ -26,13 +24,30 @@
 
 <!-- Page Content -->
 <section>
-	<span>About Page</span>
+	<span>
+		
+		
+		<span style="display: grid; justify-content: center ; " >
+		Encrypt / Decryptg template :  <a class="anchor" href=" https://asecuritysite.com/">asecuritysite</a>
+		<br>
+		Framework : <a class="anchor" href="https://kit.svelte.dev/">Sveltekit</a>
+		<br>
+		Template : <a class="anchor" href="https://github.com/Ncookiez">Ncookiez</a>
+		<br>
+		Rust and WebAssembly tutorial : <a class="anchor" href="https://www.youtube.com/channel/UC2S3Qt_thQx0vk6zDaE8Lqw">SvelteRust</a>
+		<br>
+		icon : <a class="anchor" href="https://iconscout.com/contributors/ncrte3d">Naufal Imaanullah</a>
+		<br>
+		realistic password strength estimation : <a class="anchor" href="https://dropbox.tech/security/zxcvbn-realistic-password-strength-estimation">zxcvbn</a>
+		<br>
+				
+		</span>
 </section>
 
-<!-- #################################################################################################### -->
+
 
 <style>
 
-	/* CSS Goes Here */
+
 	
 </style>

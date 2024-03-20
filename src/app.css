@@ -89,6 +89,7 @@ html, body {
 .card-2{
 	height: auto;
 	width : auto;
+	font-family: sans-serif;
 	
   	
 }
@@ -517,6 +518,7 @@ a {
 
  .tab__indicator {
 	 position: relative;
+	 display: inline-block;
 	 padding: 0 5px;
 	 font-family: sans-serif;
 	 justify-content: center;
@@ -535,7 +537,7 @@ a {
 }
 
  .tab input#one:checked ~ .tab__indicator { 
-	 transform: translate3d(82px, 0, 0);
+	 transform: translate3d(80px, 0, 0);
 }
 
  .tab input#two:checked ~ .tab__indicator {
@@ -543,7 +545,7 @@ a {
 }
 
  .tab-2 input#first:checked ~ .tab__indicator { 
-	 transform: translate3d(82px, 0, 0);
+	 transform: translate3d(80px, 0, 0);
 }
 
  .tab-2 input#second:checked ~ .tab__indicator {
@@ -620,6 +622,11 @@ a {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+.qr{
+	margin-left: calc(50% - 80px);
+	margin-top: 20px;
 }
 
 /*checkmark*/

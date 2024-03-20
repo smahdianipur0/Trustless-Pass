@@ -43,7 +43,9 @@
        
       <a href="/#/" on:click={toggleDrawer} on:click={rotateLines}><button class="box-slim">Home</button></a>
     
-       
+      <a href="/qrcode#/" on:click={toggleDrawer} on:click={rotateLines} ><button class="box-slim">Generate QR Code</button></a>
+
+
       <a href="/about#/" on:click={toggleDrawer} on:click={rotateLines} ><button class="box-slim">About</button></a>
       
      
@@ -63,19 +65,20 @@
 }
 
 .box-slim{
-  width: 100px;
-  height: 35px;
+  width: 200px;
+  height: 20px;
   vertical-align: center;
   background: transparent;
   border: none;
   cursor: pointer;
+  text-align: start;
+
 }
 
 a {
   text-decoration: none; 
   height: 20px;
-
-  
+  margin:10px 50px; 
 
 }
 

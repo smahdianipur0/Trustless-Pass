@@ -99,15 +99,12 @@
   import { QRCodeImage } from "svelte-qrcode-image";
 
   let showQR_e = false;
-  let showQR_d = false;
-
   function toggleQR_e() {
-    showQR_e = !showQR_e
-  }
+    showQR_e = !showQR_e }
 
+ let showQR_d = false;
   function toggleQR_d() {
-    showQR_d = !showQR_d
-  }
+    showQR_d = !showQR_d }
 
 
 
@@ -121,7 +118,10 @@
 													  			 <!-- Card -->
 
 <div class="card-2">
+	<title>Generate Password</title>
+<p style = "font-weight: bold; font-size: 18px; margin-bottom: 10px;">&nbsp &nbsp Generate Password</p>
 <div class="card-1 dark glass small-shadow" >  
+
 
 	<div class="tab">
 
@@ -232,6 +232,9 @@
  																		<!--invisible  Card -->	
  																		 <!-- Second Card -->
 
+<div class="card-2">
+	<title>Generate Password</title>
+<p style = "font-weight: bold; font-size: 18px; margin-bottom: 10px;">&nbsp &nbsp Encryption and Decryption</p>
 <div class="card-1 dark glass small-shadow" > 
 <div class="card-2">
 	
@@ -265,7 +268,7 @@
 	<div class="tab-2">
 
   <input  type="radio" class="tab__radio" name="tab-2" id="first"  checked/>
-  	<label for="first" class="tab__label">first</label>
+  	<label for="first" class="tab__label">Encrypt</label>
   		<div class="tab__contents"> 
   			<br>
 
@@ -317,7 +320,7 @@
   		</div>
 
   <input type="radio" class="tab__radio" name="tab-2" id="second" />
- 		 <label for="second" class="tab__label">second</label>
+ 		 <label for="second" class="tab__label">Decrypt</label>
  			 <div class="tab__contents"> 
 			<br>
 
@@ -365,6 +368,7 @@
 
 </div>
 </div>
+</div>
 
 
 
@@ -398,9 +402,6 @@
     pointer-events: none;
   }
 
-.qr{
-	margin-left: calc(50% - 80px);
-	margin-top: 20px;
-}
+
 
 </style>

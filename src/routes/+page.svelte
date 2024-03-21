@@ -1,12 +1,12 @@
-<script lang="ts">
+<script lang="ts" >
 
-//House keeping
+	//House keeping
   import { title } from '$lib/titleStore'; title.set('Home');
 	import { copy }  from 'svelte-copy';
 
 
 
-//Toast:
+	//Toast:
 	 import { onMount } from 'svelte';
 	 let isToastOpen = false;
    let timeoutId:number;
@@ -95,7 +95,7 @@
   let result_d = '';
   $: result_d = decrypt(Key,IV,cipher_text);
 
-//Qr code
+	//Qr code
   import { QRCodeImage } from "svelte-qrcode-image";
 
   let showQR_e = false;
@@ -232,7 +232,7 @@
  																		<!--invisible  Card -->	
  																		 <!-- Second Card -->
 
-<div class="card-2">
+<div class="card-2" >
 	<title>Generate Password</title>
 <p style = "font-weight: bold; font-size: 18px; margin-bottom: 10px;">&nbsp &nbsp Encryption and Decryption</p>
 <div class="card-1 dark glass small-shadow" > 

@@ -140,7 +140,7 @@ button.disabled {
 
 a {
   text-decoration: none; 
-  color: white;
+  color: var(--accent-color);
 }
 
 /*button group*/

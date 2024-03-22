@@ -134,9 +134,14 @@
   			<br>
   				
 																	<!-- Slider -->
+					<div class="flex spacing">
+						<span>{password_length}</span>
+						<span>Characters</span>
+					
+					</div>
 
-					<div class="flex">
-					<div class="length">Length: {password_length} </div> 
+					<div class="center" style="font-size: 10px;">
+					
 					<div>
 							<input aria-label="password length" class="slider" type="range" 
 							     style="--sliderBackground: linear-gradient(to right, var(--accent-color) 0%, var(--accent-color)  
@@ -158,6 +163,7 @@
 
 					</div>
 					</div>
+					<br>
 
 															   	<!-- Slider -->
 
@@ -177,6 +183,7 @@
 					 
 					</div>
 <br> 
+<br> 
 																<!-- Toggle Group -->
 
 
@@ -190,12 +197,14 @@
 					<a href="/#" on:click={toggleToast}>
 	      			 <button name="Copy" use:copy={password}  class="main" > Copy </button>
 					</a>
-<br>
 
 			</div>
 
   </div>
+
 																		<!-- Tab 2 -->
+
+
   <input type="radio" class="tab__radio" name="tab" id="two"
   bind:group={manualEntry} value={true}  />
  		 <label for="two" class="tab__label">Manual</label>
@@ -211,7 +220,6 @@
 							<a href="/#" on:click={toggleToast}>
 	      			 <button use:copy={password}  class="main" > Copy </button>
 					</a>
-							<br>
 					</div>
 
 
@@ -221,16 +229,21 @@
   																 <!--invisible Card -->
 <br>
 	  {#if password }
-    <p style = " font-size: 14px;" >{guess}</p>
-    <p style = " font-size: 14px;">{strength}</p>
-    <p style = " font-size: 14px;">{strength2}</p>
+	  <div class="text-box">
+    <p>{guess}</p>
+    <p>{strength}</p>
+    <p>{strength2}</p>
+	  </div>
   {/if}
 
 </div>
 
 </div>
  																		<!--invisible  Card -->	
+
+
  																		 <!-- Second Card -->
+
 
 <div class="card-2" >
 	<title>Generate Password</title>
@@ -240,8 +253,8 @@
 	
 			<form autocomplete="off">
 				
-				<div class="flex">
-					<input type="text" autocomplete="off" class="input dark glass" name="Key"
+				<div class="flex spacing" style="height: 40px;">
+					<input type="text" autocomplete="off" class="input dark glass " name="Key"
 					 placeholder="Key" bind:value={Key}>
 						 <span class="key-indicator">
 					    {#if Key}
@@ -250,8 +263,8 @@
 					   </span>
 				</div>
 				
-					<div class="flex">
-					<input type="text" autocomplete="off" class="input dark glass" name="IV" 
+					<div class="flex spacing" style="height: 40px;">
+					<input type="text" autocomplete="off" class="input dark glass " name="IV" 
 					placeholder="IV" bind:value={IV}>
 					<span class="key-indicator">
 					    {#if IV}
@@ -384,13 +397,9 @@
 
 .flex-slider {
 	font-size: 10px;
-	padding: 0 2.5px;
+	padding: 0 0px;
 }
 
-.length{
-	height:30px;
-	vertical-align: text-top;
-}
 
 
   .key-indicator {

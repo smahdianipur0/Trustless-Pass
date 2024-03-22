@@ -41,12 +41,12 @@
     <div class="drawer dark glass" class:open={isDrawerOpen}>
       
        
-      <a  href="/#/" on:click={toggleDrawer} on:click={rotateLines}><button name="Home" class="box-slim">Home</button></a>
+      <a  href="/#/" on:click={toggleDrawer} on:click={rotateLines}><button name="Home" class="box-slim">&nbsp Home</button></a>
     
-      <a href="/qrcode#/" on:click={toggleDrawer} on:click={rotateLines} ><button name="Generate QR Code" class="box-slim">Generate QR Code</button></a>
+      <a href="/qrcode#/" on:click={toggleDrawer} on:click={rotateLines} ><button name="Generate QR Code" class="box-slim">&nbsp Generate QR Code</button></a>
 
 
-      <a href="/about#/" on:click={toggleDrawer} on:click={rotateLines} ><button name="About" class="box-slim">About</button></a>
+      <a href="/about#/" on:click={toggleDrawer} on:click={rotateLines} ><button name="About" class="box-slim">&nbsp About</button></a>
       
      
 	
@@ -62,24 +62,33 @@
   width: 50px;
   height: 50px;
 
+
+
 }
 
 .box-slim{
   width: 200px;
-  height: 20px;
+  height: 50px;
   vertical-align: center;
   background: transparent;
   border: none;
   cursor: pointer;
   text-align: start;
   color: var(--accent-color);
+  font-size: var(--regular-font);
+
+
+
 
 }
 
 a {
   text-decoration: none; 
-  height: 20px;
+  height: 50px;
   margin:10px 50px; 
+  margin: 100px;
+
+
 
 }
 

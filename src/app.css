@@ -26,7 +26,7 @@
   	--small-portion:50px;
   	--small-clickable:25px;
   	--small-text:40px;
-  	--slider-width: 280px ;
+  	--slider-width: 97.5% ;
   	--default-padding : 7px 15px;
 
 }
@@ -107,6 +107,7 @@ html, body {
 /*	margin: 0.5ch 0;*/
 	align-items: center;
 
+
 }
 
 .center {
@@ -114,6 +115,7 @@ html, body {
 	position: relative;
 	justify-content: center;
 	align-items: center;
+
 }
 
 .spacing {
@@ -340,6 +342,11 @@ a {
   	transition: opacity .2s;
   	border: 1px solid var(--accent-color); ;
   	background: var(--sliderBackground);
+  	display: flex;
+  	margin-left: auto;
+  	margin-right: auto;
+  	margin-top: 0.8ch;
+
 	}
 
 .slider:hover {
@@ -361,28 +368,34 @@ a {
 .slider::-moz-range-thumb {
  	width: var(--small-clickable);
  	height: var(--small-clickable);
-  	border-radius: 50%;
+  border-radius: 50%;
  	background: var(--slider-thumb-color);
  	border: 2px solid var(--accent-color) ;
-  	cursor: pointer;
-  	box-shadow: var(--small-shadow);
+  cursor: pointer;
+  box-shadow: var(--small-shadow);
 	}
 
 .flex-slider{
 
 	display: flex;
 	justify-content: space-between;
-	width: calc(var(--slider-width) + 3px);
+/*	width: calc(var(--slider-width) + 3px);*/
+	width: 292px;
 	height: 10px; 
 	font-size: 10px;
-	padding: 0 4px;
+	padding: 2px 0px;
 	font-family:sans-serif ;
+
 }
 
 .flex-slider > span {
    display: inline-block; 
-   width: var(--slider-width);
+/*   width: 292px;*/
    text-align: center;
+   display: flex;
+   margin-left: auto;
+   margin-right: auto;
+   
   
 }
 /*Range Slider*/

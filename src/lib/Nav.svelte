@@ -22,7 +22,7 @@
 <body  id ="display-drawer">
 <div class="card">
 
-<div class="fixed-top dark glass flex">
+<div class="fixed-top dark glass flex" style="font-weight: bold;">
 
   <div> &nbsp &nbsp {$title}</div>
 

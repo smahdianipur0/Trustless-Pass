@@ -395,10 +395,7 @@
 <style>
 
 
-.flex-slider {
-	font-size: 10px;
-	padding: 0 0px;
-}
+
 
 
 

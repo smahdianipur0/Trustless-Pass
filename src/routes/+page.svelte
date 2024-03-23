@@ -132,6 +132,7 @@
 
 <div class="card-2">
 	<title>Generate Password</title>
+
 <p style = "font-weight: bold; font-size: 18px; margin-bottom: 10px;">&nbsp &nbsp Generate Password</p>
 <div class="card-1 dark glass small-shadow" >  
 
@@ -259,7 +260,8 @@
 
 
 <div class="card-2" >
-	<title>Generate Password</title>
+	<title>Evaluate Password</title>
+
 <p style = "font-weight: bold; font-size: 18px; margin-bottom: 10px;">&nbsp &nbsp Encryption and Decryption</p>
 <div class="card-1 dark glass small-shadow" > 
 <div class="card-2">

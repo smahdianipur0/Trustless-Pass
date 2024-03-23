@@ -29,7 +29,7 @@
 
   <div class="box">
       <a aria-label="Menu Drawer" href="#/" on:click={toggleDrawer}>
-	       <button name="Menu Drawer" class="menu" on:click={rotateLines}>
+	       <button aria-label="Menu Drawer" class="menu" on:click={rotateLines}>
   		      <div class="line line1" class:rotate={rotate}></div>
  		        <div class="line line2" class:rotate={rotate}></div>
 	       </button>

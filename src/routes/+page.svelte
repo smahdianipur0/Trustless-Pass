@@ -30,15 +30,8 @@
 
 
 
-  //Rust Functions
-  import { encrypt }                      from "$lib/pkg/rust_lib";
-  import { decrypt }                      from "$lib/pkg/rust_lib";
-  import { count_characters }             from "$lib/pkg/rust_lib";
-  import { generate_password }            from "$lib/pkg/rust_lib";
-  import { calculate_password_strength }  from "$lib/pkg/rust_lib";
-  import { calculate_password_strength2 } from "$lib/pkg/rust_lib";
-  import { guessable }                    from "$lib/pkg/rust_lib";
-
+  //Generate Password
+  import { generate_password } from "$lib/pkg/rust_lib";
 
   let password_length = 16
 
@@ -65,10 +58,20 @@
     password = generate_password(password_length, add_special_char, add_number, capitalize_first_letter);
   }
 
+
+//calculate password strength
+  import { calculate_password_strength }  from "$lib/pkg/rust_lib";
+	import { calculate_password_strength2 } from "$lib/pkg/rust_lib";
+	import { guessable }                    from "$lib/pkg/rust_lib";
+
   $: guess = guessable(password);
   $: strength = calculate_password_strength(password);
   $: strength2 = calculate_password_strength2(password);
 
+
+
+// Count Characters
+  import { count_characters }  from "$lib/pkg/rust_lib";
 
 	let Key = '';
   $: Key_count = count_characters(Key);
@@ -76,12 +79,16 @@
   let IV = '';
   $: IV_count = count_characters(IV);
 
+
+//encrypt and decrypt
+  import { encrypt } from "$lib/pkg/rust_lib";
+  import { decrypt } from "$lib/pkg/rust_lib";
+
   let plain_text = '';
   let auto_plain = false;
   function f_auto_plain() {
     auto_plain = !auto_plain; } 
 
-  
 
   $: if (auto_plain) {
   plain_text = password; 
@@ -89,11 +96,17 @@
     plain_text = '';
   }
 
-
-  $: result_e = encrypt(Key,IV,plain_text);
-  let cipher_text = '';
+ 	let result_e = '';
+ 	let cipher_text = '';
   let result_d = '';
+
+ 
+  $: result_e = encrypt(Key,IV,plain_text);
   $: result_d = decrypt(Key,IV,cipher_text);
+
+
+
+
 
 	//Qr code
   import { QRCodeImage } from "svelte-qrcode-image";

@@ -68,7 +68,7 @@
 
 .box-slim{
   width: 200px;
-  height: 50px;
+  height: 25px;
   vertical-align: center;
   background: transparent;
   border: none;
@@ -84,7 +84,7 @@
 
 a {
   text-decoration: none; 
-  height: 50px;
+  height: 25px;
   margin:10px 50px; 
   margin: 100px;
 

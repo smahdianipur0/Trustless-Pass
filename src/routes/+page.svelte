@@ -147,15 +147,15 @@
   			<br>
   				
 																	<!-- Slider -->
-					<div class="flex spacing">
+					<div class="flex " style="padding-left: 0.5ch; padding-right: 0.5ch;">
 						<span>{password_length}</span>
 						<span>Characters</span>
 					
 					</div>
 
-					<div class="center" style="font-size: 10px;">
 					
-					<div>
+					
+					<div  style="font-size: 10px;">
 							<input aria-label="password length" class="slider" type="range" 
 							     style="--sliderBackground: linear-gradient(to right, var(--accent-color) 0%, var(--accent-color)  
 							                	{((password_length-12) / 8) * 100}%, var(--secondary-color) 
@@ -175,7 +175,7 @@
 						 	</p>
 
 					</div>
-					</div>
+					
 					<br>
 
 															   	<!-- Slider -->
@@ -414,7 +414,7 @@
 
   .key-indicator {
     position: absolute;
-    right: 25px;
+    right: 35px;
 		top: 20px;
     transform: translateY(-50%);
     color: #777;

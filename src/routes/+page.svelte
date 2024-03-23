@@ -404,8 +404,8 @@
 
   .key-indicator {
     position: absolute;
-    right: 15px;
-		top: 25px;
+    right: 25px;
+		top: 20px;
     transform: translateY(-50%);
     color: #777;
     pointer-events: none;

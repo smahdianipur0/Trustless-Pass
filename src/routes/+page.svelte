@@ -411,9 +411,6 @@
 
 
 
-
-
-
   .key-indicator {
     position: absolute;
     right: 35px;

@@ -19,8 +19,7 @@
 </script>
 
 
-<body  id ="display-drawer">
-<div class="card">
+
 
 <div class="fixed-top dark glass flex" style="font-weight: bold;">
 
@@ -28,12 +27,10 @@
 
 
   <div class="box">
-      <a aria-label="Menu Drawer" href="#/" on:click={toggleDrawer}>
-	       <button aria-label="Menu Drawer" class="menu" on:click={rotateLines}>
+	       <button aria-label="Menu Drawer" class="menu" on:click={rotateLines} on:click={toggleDrawer} >
   		      <div class="line line1" class:rotate={rotate}></div>
  		        <div class="line line2" class:rotate={rotate}></div>
 	       </button>
-      </a>
   </div>
 
     
@@ -51,8 +48,8 @@
      
 	
 </div>
-</div>
-</body>
+
+
 
 
 <style>

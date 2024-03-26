@@ -18,12 +18,8 @@
 
 
 
-<div class="card">
+
 <div class= "page">
-
-
-													  		
-
 <div class="card-2">
 	<title>Generate QR Code</title>
 <p style = "font-weight: bold; font-size: 18px; margin-bottom: 10px;">&nbsp &nbsp Generate QR Code</p>
@@ -47,7 +43,7 @@
 </div>	
 </div>
 </div>
-</div>
+
 
    
 

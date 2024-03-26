@@ -123,8 +123,8 @@
 
 </script>
 
-<div  id ="display-toast">
-<div class="card">
+<!-- <div  id ="display-toast">
+<div class="card"> -->
 <div class= "page">
 
 
@@ -208,9 +208,10 @@
 				<form autocomplete="off">
 						<input aria-label="password" type="text" autocomplete="off" class="input dark glass " readonly value="{password}">	
 				</form>
-					<a href="/#" on:click={toggleToast}>
-	      			 <button name="Copy" use:copy={password}  class="main" > Copy </button>
-					</a>
+					
+	      			 <button on:click={toggleToast} name="Copy" use:copy={password}  class="main" > Copy
+	      			  </button>
+					
 
 			</div>
 
@@ -231,9 +232,9 @@
 							<input type="text" autocomplete="off" class="input dark glass" name="firstname" placeholder="password" 
 							bind:value={password}>
 							</form>
-							<a href="/#" on:click={toggleToast}>
-	      			 <button use:copy={password}  class="main" > Copy </button>
-					</a>
+							
+	      			 <button on:click={toggleToast} use:copy={password}  class="main" > Copy </button>
+					
 					</div>
 
 
@@ -327,7 +328,7 @@
 
 				<div class="btn-group  "> 
 					
-	      	<button name="Copy" use:copy={result_e}  class="main" > <a href="/#" on:click={toggleToast}> Copy </button>
+	      	<button on:click={toggleToast} name="Copy" use:copy={result_e}  class="main" > Copy </button>
 					<button name="Show QR Code" class="main" on:click={toggleQR_e}> Show QR Code</button>
 				</div>
 				{:else}
@@ -371,7 +372,7 @@
 
 				<div class="btn-group  "> 
 					
-	      	<button name="Copy" use:copy={result_d}  class="main" > <a href="/#" on:click={toggleToast}> Copy </button>
+	      	<button on:click={toggleToast} name="Copy" use:copy={result_d}  class="main" > Copy </button>
 					<button  name="Show QR Code" class="main" on:click={toggleQR_d}> Show QR Code</button>
 				</div>
 				{:else}
@@ -395,8 +396,8 @@
 				<div class="tab__indicator" /></div>
 
 </div>
-</div>
-</div>
+<!-- </div>
+</div> -->
 
 
 

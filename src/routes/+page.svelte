@@ -106,8 +106,6 @@
 
 
 
-
-
 	//Qr code
   import { QRCodeImage } from "svelte-qrcode-image";
 
@@ -123,17 +121,16 @@
 
 </script>
 
-<!-- <div  id ="display-toast">
-<div class="card"> -->
+
 <div class= "page">
 
 
 													  			 <!-- Card -->
 
-<div class="card-2">
+<div>
 	<title>Generate Password</title>
 
-<p style = "font-weight: bold; font-size: 18px; margin-bottom: 10px;">&nbsp &nbsp Generate Password</p>
+<p class="title">Generate Password</p>
 <div class="card-1 dark glass small-shadow" >  
 
 
@@ -209,7 +206,7 @@
 						<input aria-label="password" type="text" autocomplete="off" class="input dark glass " readonly value="{password}">	
 				</form>
 					
-	      			 <button on:click={toggleToast} name="Copy" use:copy={password}  class="main" > Copy
+	      			 <button on:click={toggleToast} name="Copy" use:copy={password}  class="main drop-shadow" > Copy
 	      			  </button>
 					
 
@@ -233,7 +230,7 @@
 							bind:value={password}>
 							</form>
 							
-	      			 <button on:click={toggleToast} use:copy={password}  class="main" > Copy </button>
+	      			 <button on:click={toggleToast} use:copy={password}  class="main drop-shadow" > Copy </button>
 					
 					</div>
 
@@ -260,12 +257,12 @@
  																		 <!-- Second Card -->
 
 
-<div class="card-2" >
+<div>
 	<title>Evaluate Password</title>
 
-<p style = "font-weight: bold; font-size: 18px; margin-bottom: 10px;">&nbsp &nbsp Encryption and Decryption</p>
+<p class="title">Encryption and Decryption</p>
 <div class="card-1 dark glass small-shadow" > 
-<div class="card-2">
+<div>
 	
 			<form autocomplete="off">
 				
@@ -328,8 +325,8 @@
 
 				<div class="btn-group  "> 
 					
-	      	<button on:click={toggleToast} name="Copy" use:copy={result_e}  class="main" > Copy </button>
-					<button name="Show QR Code" class="main" on:click={toggleQR_e}> Show QR Code</button>
+	      	<button on:click={toggleToast} name="Copy" use:copy={result_e}  class="main drop-shadow" > Copy </button>
+					<button name="Show QR Code" class="main drop-shadow" on:click={toggleQR_e}> Show QR Code</button>
 				</div>
 				{:else}
 				<div class="btn-group  "> 
@@ -339,7 +336,11 @@
 
 				{/if}
 <div class="qr">
-{#if showQR_e && plain_text }
+{#if showQR_e && plain_text && Key && IV &&
+					result_e !== "IV is not 16 Characters" &&
+		      result_e !== "Key is not 16 Characters" &&
+		      result_e !== "Invalid Credentials"&&
+		      result_e !== ""}
 
 					<QRCodeImage class="qr" text={result_e} width={160} height={160} margin={1} />
 					{/if}
@@ -372,8 +373,8 @@
 
 				<div class="btn-group  "> 
 					
-	      	<button on:click={toggleToast} name="Copy" use:copy={result_d}  class="main" > Copy </button>
-					<button  name="Show QR Code" class="main" on:click={toggleQR_d}> Show QR Code</button>
+	      	<button on:click={toggleToast} name="Copy" use:copy={result_d}  class="main drop-shadow" > Copy </button>
+					<button  name="Show QR Code" class="main drop-shadow" on:click={toggleQR_d}> Show QR Code</button>
 				</div>
 				{:else}
 				<div class="btn-group  "> 
@@ -383,7 +384,11 @@
 
 				{/if}
 <div class="qr">
-{#if showQR_d && cipher_text }
+{#if showQR_d && cipher_text && Key && IV &&
+					result_e !== "IV is not 16 Characters" &&
+		      result_e !== "Key is not 16 Characters" &&
+		      result_e !== "Invalid Credentials"&&
+		      result_e !== ""}
 
 					<QRCodeImage class="qr" text={result_d} width={160} height={160} margin={1} />
 					{/if}
@@ -396,8 +401,6 @@
 				<div class="tab__indicator" /></div>
 
 </div>
-<!-- </div>
-</div> -->
 
 
 
@@ -409,8 +412,6 @@
 
 
 <style>
-
-
 
   .key-indicator {
     position: absolute;

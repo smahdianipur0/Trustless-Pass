@@ -48,6 +48,9 @@
 
 <style>
 
+a{
+color: var(--accent-border);
+}
 
 	
 </style>

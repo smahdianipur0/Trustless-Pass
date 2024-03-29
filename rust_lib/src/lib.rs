@@ -224,7 +224,7 @@ pub fn calculate_password_strength(password: &str) -> String {
         Ok(entropy) => {
             // Return the formatted string for offline slow hashing crack time
             format!(
-                 "Slow hashing (1e4/s): {}",
+                 "Slow Hashing: {}",
                 entropy.crack_times().offline_slow_hashing_1e4_per_second(),
                 
             )
@@ -242,7 +242,7 @@ pub fn calculate_password_strength2(password: &str) -> String {
         Ok(entropy) => {
             // Return the formatted string for offline slow hashing crack time
             format!(
-                 "Fast hashing (1e10/s): {}",
+                 "Fast Hashing: {}",
                 
                 entropy.crack_times().offline_fast_hashing_1e10_per_second()
             )

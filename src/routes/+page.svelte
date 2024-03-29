@@ -68,6 +68,8 @@
   $: strength = calculate_password_strength(password);
   $: strength2 = calculate_password_strength2(password);
 
+	$: boxClass = `box ${guess .replace(/\s+/g, '-')}`;
+
 
 
 // Count Characters
@@ -129,6 +131,7 @@
 
 <div>
 	<title>Generate Password</title>
+
 
 <p class="title">Generate Password</p>
 <div class="card-1 dark glass small-shadow" >  
@@ -242,7 +245,8 @@
 <br>
 	  {#if password }
 	  <div class="text-box">
-    <p>{guess}</p>
+    <p >{guess} &nbsp;</p>
+    <p class={boxClass}></p>
     <p>{strength}</p>
     <p>{strength2}</p>
 	  </div>
@@ -422,6 +426,45 @@
     pointer-events: none;
   }
 
+  .box {
+  	display: flex;
+  	align-items: center;
+    transition: width 0.5s, background-color 0.5s, background-position 0.5s ;
+    border-radius: var(--radiu-a);
+  	background-color: red; 
+  	margin-bottom: 10px;
+  	height: 0.3ch;
+  	margin-top: 0.5ch;
+  	background-image: linear-gradient(to right, #f21616, #f02f11, #d47a20, #4678b9, #5d43b1, #7643b1, #5d43b1);
+  	background-clip: content-box;
+  	background-size: 300% 1ch;
+  }
+
+  .box.Too-Guessable {
+  	width: 36%;
+  	background-position: 0%;
+    
+  }
+
+  .box.Very-Guessable {
+    width: 52%;
+  	background-position: 16%;
+  }
+
+  .box.Somewhat-Guessable  {
+    width: 68%;
+  	background-position: 32%;
+  }
+
+  .box.Safely-Unguessable  {
+    width: 84%;
+  	background-position: 48%;
+  }
+
+  .box.Very-Unguessable  {
+    width: 100%;
+  	background-position: 64%;
+  }
 
 
 </style>

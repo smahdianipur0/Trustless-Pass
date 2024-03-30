@@ -158,9 +158,7 @@
 					
 					<div  style="font-size: 10px;">
 							<input aria-label="password length" class="slider" type="range" 
-							     style="--sliderBackground: linear-gradient(to right, var(--accent-color) 0%, var(--accent-color)  
-							                	{((password_length-12) / 8) * 100}%, var(--secondary-color) 
-							             	{((password_length-12) / 8) * 100 + 1}%, var(--secondary-color)  100%)"
+							     style="--position:{((password_length-12) / 8) * 100}%"
 						 		bind:value={password_length} min="12" max="20" />
 
 						 	<p class="flex-slider">

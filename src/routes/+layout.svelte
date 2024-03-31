@@ -7,7 +7,7 @@
 </script>
 
 
-
+<div>
 
 <Nav />
 
@@ -16,13 +16,11 @@
 
 <!-- App Content -->
 <main><slot />
-<br>
-<br>
-<br>
+
 </main>
 
 
-
+</div>
 
 
 <style>
@@ -31,6 +29,16 @@
 	main {
 		padding: 1rem;
 		margin-top: var(--small-portion);
+		
+			
+	}
+
+	div{
+	min-height: max-content;
+  	min-height: 100vh;
+	background-image: url($lib/dddepth-153.png);
+	background-repeat: no-repeat;
+    background-size: cover;
 
 	}
 

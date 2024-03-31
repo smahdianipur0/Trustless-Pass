@@ -10,6 +10,7 @@
 	--primary-color: #b9c6d2;
 	--secondary-color: rgba(45, 45, 45,1);
 	--tertiary-color: rgba(30, 30, 30,1);
+	--select-color:rgba(12, 12, 12,1);
 	--accent-color: rgba(250, 255, 255,1);
 	--focus-color : rgba(255, 255, 255, 0.5);
 	--focus-color-gradient : linear-gradient(rgba(255, 255, 255, 0.4),rgba(255, 255, 255, 0.3));
@@ -522,6 +523,9 @@ a {
   display: inline-block;
   border: 1px solid transparent;
   border-radius: var(--radiu-a);
+  border-bottom: 1px solid var(--accent-border);
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
 
 }
 
@@ -529,11 +533,13 @@ a {
 
 .input:hover {
 	border: 1px solid transparent;
+	border-bottom: 2px solid var(--accent-border);
 	}
 
 .input:focus {
 	border: 1px solid var(--accent-border);
-	background-color:var(--tertiary-color) ;
+	border-radius: var(--radiu-a);
+	background-color:var(--select-color) ;
 	filter: drop-shadow( var(--drop-shadow));
 	outline: none;
 }
@@ -549,15 +555,20 @@ a {
   border: 1px solid transparent;
   border-radius: var(--radiu-a);
   resize: vertical;
+  border-bottom: 1px solid var(--accent-border);
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
 
 .txt-area:hover {
 	border: 1px solid transparent;
+	border-bottom: 2px solid var(--accent-border);
 	}
 
 .txt-area:focus {
 	border: 1px solid var(--accent-border);
-	background-color:var(--tertiary-color) ;
+	border-radius: var(--radiu-a);
+	background-color:var(--select-color) ;
 	filter: drop-shadow( var(--drop-shadow));
 	outline: none;
 }

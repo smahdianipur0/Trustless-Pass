@@ -50,6 +50,12 @@
 
 
   let manualEntry = false; 
+
+    function setManualEntryToFalse() {
+    manualEntry = true;	
+    manualEntry = false;
+  }
+
   let password = '';
 
   $: if (manualEntry) {
@@ -201,17 +207,16 @@
 
 
 																		<!-- Inputs -->
-			<div class="flex">
+			
+				<p class="center" style="font-size:var(--big-font)">{password}</p>
 
-				<form autocomplete="off">
-						<input aria-label="password" type="text" autocomplete="off" class="input dark glass " readonly value="{password}">	
-				</form>
-					
+					<div class="btn-group" style="margin-top: 4ch ">
+
+								<button class="main drop-shadow" on:click={setManualEntryToFalse} > Regenerate </button>
 	      			 <button on:click={toggleToast} name="Copy" use:copy={password}  class="main drop-shadow" > Copy
-	      			  </button>
-					
+	      			  </button>     	
 
-			</div>
+					</div>
 
   </div>
 
@@ -315,8 +320,8 @@
 						{/if}
 
 						{#if Key && IV}
-				<textarea  class="txt-area dark glass" rows="2" readonly
-				bind:value={result_e}></textarea>
+						<p class="center result" >{result_e}</p>
+
 						{/if}
 
 				{#if Key && IV &&
@@ -363,8 +368,8 @@
 						
 
 						{#if Key && IV}
-				<textarea  class="txt-area dark glass" rows="2" readonly
-				bind:value={result_d}></textarea>
+						<p class="center result" >{result_d}</p>
+				
 						{/if}
 
 				{#if Key && IV &&
@@ -423,6 +428,13 @@
     color: #777;
     pointer-events: none;
   }
+
+  .result {
+  	font-size:var(--big-font); 
+  	margin-top: 2ch; 
+  	margin-bottom: 2ch; 
+  }
+  
 
   .box {
   	display: flex;

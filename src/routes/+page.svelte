@@ -143,7 +143,7 @@
 <div class="card-1 dark glass small-shadow" >  
 
 
-	<div class="tab">
+	<div class="tab" >
 
   <input  type="radio" class="tab__radio" name="tab" id="one"
   bind:group={manualEntry} value={false}  checked/>
@@ -160,12 +160,14 @@
 					
 					</div>
 
-					
-					
-					<div  style="font-size: 10px;">
-							<input aria-label="password length" class="slider" type="range" 
+									
+					  
+					<input aria-label="password length" class="slider" type="range" 
 							     style="--position:{((password_length-12) / 8) * 100}%"
 						 		bind:value={password_length} min="12" max="20" />
+
+
+					<div  style="font-size: var(--extra-small-font);">
 
 						 	<p class="flex-slider">
 									<span> ╹ </span> <span> ╹ </span> <span> ╹ </span> <span> ╹ </span> 
@@ -273,7 +275,7 @@
 	
 			<form autocomplete="off">
 				
-				<div class="flex spacing" style="height: 40px;">
+				<div class="flex spacing" style="height:var(--portion)">
 					<input type="text" autocomplete="off" class="input dark glass " name="Key"
 					 placeholder="Key" bind:value={Key}>
 						 <span class="key-indicator">
@@ -423,7 +425,7 @@
   .key-indicator {
     position: absolute;
     right: 35px;
-		top: 20px;
+		top: 50%;
     transform: translateY(-50%);
     color: #777;
     pointer-events: none;
@@ -435,6 +437,7 @@
   	margin-bottom: 2ch; 
   }
   
+
 
   .box {
   	display: flex;

@@ -1,10 +1,11 @@
 :root {
+
 	font-family: sans-serif;
 	font-size: 62.5%;
-	--regular-font : 1.6rem;
+	--regular-font : 1.8rem;
 	--small-font:1.4rem;
 	--extra-small-font:1rem;
-	--big-font:1.8rem;
+	--big-font:2rem;
 
 
 	--primary-color: #b9c6d2;
@@ -33,11 +34,10 @@
 	--z-layer-higher :3;
 	--z-layer-middle :2;
 
-	--small-portion:50px;
-	--small-clickable:25px;
-	--small-text:40px;
+	--portion:6ch;
+	--small-clickable:3.5ch;
 	--slider-width: 97.5% ;
-	--default-padding : 7px 15px;
+	--default-padding : 0.7ch 1.5ch;
 
 }
 
@@ -55,6 +55,20 @@
 	box-sizing: border-box;
 }
 
+.canv{
+
+	min-height: max-content;
+  min-height: 100vh;
+/*	background-image: url($lib/dddepth-198.webp);*/
+
+	/*background-repeat: no-repeat;
+  background-size: cover;*/
+
+  background-position: 0 0;
+  border: 0.1px solid transparent ;
+  background: rgb(70,70,70);
+background: linear-gradient(135deg, rgba(70,70,70,1) 0%, rgba(55,55,55,1) 14%, rgba(30,30,30,1) 100%);
+	}
 
 html, body {
 	position: relative;
@@ -62,11 +76,6 @@ html, body {
 	height: 100%;
 	color: var(--accent-color);
 	background-color: var(--secondary-color);
-/*	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='560' height='560' preserveAspectRatio='none' viewBox='0 0 560 560'%3e%3cg clip-path='url(%26quot%3b%23SvgjsClipPath1251%26quot%3b)' fill='none'%3e%3crect width='560' height='560' x='0' y='0' fill='rgba(33%2c 33%2c 33%2c 1)'%3e%3c/rect%3e%3ccircle r='39.525' cx='103.29' cy='513.06' fill='url(%26quot%3b%23SvgjsLinearGradient1252%26quot%3b)'%3e%3c/circle%3e%3ccircle r='40.435' cx='365.43' cy='235.83' fill='url(%26quot%3b%23SvgjsLinearGradient1253%26quot%3b)'%3e%3c/circle%3e%3ccircle r='23.915' cx='472.58' cy='55.12' fill='url(%26quot%3b%23SvgjsLinearGradient1254%26quot%3b)'%3e%3c/circle%3e%3ccircle r='39.695' cx='39.52' cy='517.12' fill='url(%26quot%3b%23SvgjsLinearGradient1255%26quot%3b)'%3e%3c/circle%3e%3ccircle r='27.825' cx='501.35' cy='199.2' fill='url(%26quot%3b%23SvgjsLinearGradient1256%26quot%3b)'%3e%3c/circle%3e%3ccircle r='28.665' cx='224.9' cy='193.8' fill='url(%26quot%3b%23SvgjsLinearGradient1257%26quot%3b)'%3e%3c/circle%3e%3ccircle r='55.095' cx='237.02' cy='231.8' fill='url(%26quot%3b%23SvgjsLinearGradient1258%26quot%3b)'%3e%3c/circle%3e%3ccircle r='15.245' cx='150.8' cy='89.66' fill='url(%26quot%3b%23SvgjsLinearGradient1259%26quot%3b)'%3e%3c/circle%3e%3ccircle r='43.435' cx='480.29' cy='402.36' fill='url(%26quot%3b%23SvgjsLinearGradient1260%26quot%3b)'%3e%3c/circle%3e%3c/g%3e%3cdefs%3e%3cclipPath id='SvgjsClipPath1251'%3e%3crect width='560' height='560' x='0' y='0'%3e%3c/rect%3e%3c/clipPath%3e%3clinearGradient x1='24.24000000000001' y1='513.06' x2='182.34' y2='513.06' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1252'%3e%3cstop stop-color='%2384b6e0' offset='0.1'%3e%3c/stop%3e%3cstop stop-color='%23464a8f' offset='0.9'%3e%3c/stop%3e%3c/linearGradient%3e%3clinearGradient x1='284.56' y1='235.83' x2='446.3' y2='235.83' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1253'%3e%3cstop stop-color='%23e298de' offset='0.1'%3e%3c/stop%3e%3cstop stop-color='%23484687' offset='0.9'%3e%3c/stop%3e%3c/linearGradient%3e%3clinearGradient x1='424.75' y1='55.12' x2='520.41' y2='55.12' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1254'%3e%3cstop stop-color='%23f29b7c' offset='0.1'%3e%3c/stop%3e%3cstop stop-color='%237e6286' offset='0.9'%3e%3c/stop%3e%3c/linearGradient%3e%3clinearGradient x1='-39.87' y1='517.12' x2='118.91' y2='517.12' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1255'%3e%3cstop stop-color='%2384b6e0' offset='0.1'%3e%3c/stop%3e%3cstop stop-color='%23464a8f' offset='0.9'%3e%3c/stop%3e%3c/linearGradient%3e%3clinearGradient x1='445.70000000000005' y1='199.2' x2='557' y2='199.2' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1256'%3e%3cstop stop-color='%2332325d' offset='0.1'%3e%3c/stop%3e%3cstop stop-color='%23424488' offset='0.9'%3e%3c/stop%3e%3c/linearGradient%3e%3clinearGradient x1='167.57' y1='193.8' x2='282.23' y2='193.8' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1257'%3e%3cstop stop-color='%23f29b7c' offset='0.1'%3e%3c/stop%3e%3cstop stop-color='%237e6286' offset='0.9'%3e%3c/stop%3e%3c/linearGradient%3e%3clinearGradient x1='126.83000000000001' y1='231.8' x2='347.21000000000004' y2='231.8' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1258'%3e%3cstop stop-color='%2332325d' offset='0.1'%3e%3c/stop%3e%3cstop stop-color='%23424488' offset='0.9'%3e%3c/stop%3e%3c/linearGradient%3e%3clinearGradient x1='120.31000000000002' y1='89.66' x2='181.29000000000002' y2='89.66' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1259'%3e%3cstop stop-color='%2384b6e0' offset='0.1'%3e%3c/stop%3e%3cstop stop-color='%23464a8f' offset='0.9'%3e%3c/stop%3e%3c/linearGradient%3e%3clinearGradient x1='393.42' y1='402.36' x2='567.1600000000001' y2='402.36' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1260'%3e%3cstop stop-color='%23ab3c51' offset='0.1'%3e%3c/stop%3e%3cstop stop-color='%234f4484' offset='0.9'%3e%3c/stop%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e");*/
-/*	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='1440' preserveAspectRatio='none' viewBox='0 0 1440 1440'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1000%26quot%3b)' fill='none'%3e%3crect width='1440' height='1440' x='0' y='0' fill='rgba(22%2c 22%2c 22%2c 1)'%3e%3c/rect%3e%3cpath d='M 0%2c625 C 57.6%2c522 172.8%2c158.8 288%2c110 C 403.2%2c61.2 460.8%2c334.4 576%2c381 C 691.2%2c427.6 748.8%2c322.8 864%2c343 C 979.2%2c363.2 1036.8%2c482.4 1152%2c482 C 1267.2%2c481.6 1382.4%2c369.2 1440%2c341L1440 1440L0 1440z' fill='%23184a7e'%3e%3c/path%3e%3cpath d='M 0%2c1168 C 96%2c1097.2 288%2c788.6 480%2c814 C 672%2c839.4 768%2c1249 960%2c1295 C 1152%2c1341 1344%2c1094.2 1440%2c1044L1440 1440L0 1440z' fill='%232264ab'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1000'%3e%3crect width='1440' height='1440' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");;*/
-/*	background-image: url(lib/dddepth-245.jpg);*/
-
-
 	font-size: 1.6rem;
 	color: white;
 	
@@ -81,8 +90,11 @@ html, body {
 
 .dark{
 	background-color: var(--glass-background);
-	
 	}
+
+.solid-bg{
+background-color: linear-gradient(135deg, rgba(70,70,70,1) 0%, rgba(55,55,55,1) 14%, rgba(30,30,30,1) 100%);
+}
 
 .drop-shadow{
 	filter: drop-shadow( var(--drop-shadow));
@@ -91,6 +103,8 @@ html, body {
 .small-shadow{
 	box-shadow: var(--small-shadow);
 }
+
+
 
 .page{
 	display: grid;
@@ -107,7 +121,7 @@ html, body {
 	border: 1px solid  var(--main-border);
 	border-radius: var(--radiu-b);
 	padding: 2ch 0;
-	margin-bottom: 25px;
+	margin-bottom: var(--small-clickable);
 	overflow: hidden; 	
 }
 
@@ -115,7 +129,8 @@ html, body {
 .title{
 	font-weight: bold; 
 	font-size: var(--big-font); 
-	margin-bottom: 10px;
+	margin-bottom: 1ch;
+	margin-top: 1ch;
 	padding-left: 2ch;
 
 }
@@ -129,6 +144,7 @@ html, body {
 	position: relative;
 	justify-content: space-between;
 	align-items: center;
+	gap: 1ch;
 
 
 }
@@ -252,7 +268,7 @@ a {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 50px;
+	height: var(--portion);
 
 }
 
@@ -312,7 +328,7 @@ a {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 50px;
+	height: var(--portion);
 
 }
 
@@ -366,6 +382,8 @@ a {
   	background-position: calc(600% - ( var(--position) * 5) );
 		background-repeat: no-repeat;
 
+
+
 	}
 
 /*.slider:hover {
@@ -382,6 +400,8 @@ a {
 	border: 2px solid var(--accent-color); ;
 	cursor: pointer;
 	box-shadow: var(--small-shadow);
+
+
 	}
 
 .slider::-moz-range-thumb {
@@ -393,7 +413,10 @@ a {
   cursor: pointer;
   box-shadow: var(--small-shadow);
 
+   
 	}
+
+
 
 .flex-slider{
 
@@ -402,6 +425,7 @@ a {
 	height: 10px; 
 	font-size: var(--extra-small-font);
 	padding: 2px 0px;
+
 
 
 }
@@ -413,7 +437,7 @@ a {
    margin-left: auto;
    margin-right: auto;
    z-index: -1;
-   
+
    
   
 }
@@ -426,8 +450,10 @@ a {
   top: 0; 
   left: 0; 
   width: 100%; 
-  height: var(--small-portion); 
+  height: var(--portion); 
   z-index: var(--z-layed-top);
+  font-size: var(--regular-font);
+  padding: 2ch;
 	}
 
 	
@@ -448,7 +474,9 @@ a {
 
 
 	.open {
-  top: var(--small-portion);
+  top: calc( var(--portion) + 0.6ch);
+
+  transition-duration:0.2s;
 }
 
 	.toast {
@@ -461,7 +489,7 @@ a {
 	 left: calc(50% - 125px ); 
 	 align-items: center;
 	 justify-content: center;
-	 height: var(--small-portion); 
+	 height: var(--portion); 
 	 padding: 10px;
 	 box-sizing: border-box;
 	 flex-direction: column;
@@ -473,7 +501,7 @@ a {
 
 
 	.opentoast {
-  bottom: var(--small-portion);
+  bottom: var(--portion);
 }
 
 /*Nav Bar*/
@@ -486,8 +514,8 @@ a {
     padding: 0;
     cursor: pointer;
     position: relative;
-    width: var(--small-portion);
-    height: var(--small-portion);
+    width: var(--portion);
+    height: var(--portion);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -496,23 +524,31 @@ a {
 
   .line {
     position: absolute;
-    width: 20px;
-    height: 2px;
+    width: var(--small-clickable);
+    height: 0.4ch;
     background: white;
     transition: transform 0.3s ease;
+    border-radius: 2ch;
   }
   .line1 {
-    top: calc(50% - 4px); 
+    top: calc(50% - 6px); 
   }
   .line2 {
-    top: calc(50% + 4px); 
+    top: calc(50% + 6px); 
 	}
   .line1.rotate {
-    transform: rotate(-45deg) translate(0, 5.6px);
+    transform: rotate(-45deg) translate(0, 8.4px);
 
   }
   .line2.rotate {
-    transform: rotate(45deg)translate(0, -5.6px);
+    transform: rotate(45deg)translate(0, -8.4px);
+  }
+
+  .box-slim.rotate{
+  	transform: translateX(0px);
+  	opacity: 1;
+  	 transition-delay: 0.2s;
+  	 transition-duration: 0.2s;
   }
 
 /*Menu button*/
@@ -581,7 +617,7 @@ a {
  	 width: 80px;
  	 justify-content: center;
 	 align-items: center;
-	 height: var(--small-portion);
+	 height: var(--portion);
 	 height: 30px;
 	 position: absolute;
 	 top: 0;
@@ -589,7 +625,7 @@ a {
 	 filter: drop-shadow( var(--drop-shadow));
 	 border-radius: var(--radus-c);
 	 transition: transform 600ms cubic-bezier(0.02, 0.94, 0.09, 0.97), background 300ms cubic-bezier(0.17, 0.67, 0.14, 1.03);
-/*	 transform: translate3d(1rem, 0, 0);*/
+
 
 
 }

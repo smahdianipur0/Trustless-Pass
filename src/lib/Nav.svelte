@@ -23,7 +23,7 @@
 
 <div class="fixed-top dark glass flex" style="font-weight: bold;">
 
-  <div> &nbsp &nbsp {$title}</div>
+  <div>{$title}</div>
 
 
   <div class="box">
@@ -37,13 +37,13 @@
 </div>
     <div class="drawer dark glass" class:open={isDrawerOpen}>
       
-       
-      <a  href="/#/" on:click={toggleDrawer} on:click={rotateLines}><button name="Home" class="box-slim">&nbsp Home</button></a>
+       <br>
+      <a  href="/" on:click={toggleDrawer} on:click={rotateLines}><button name="Home" class="box-slim" class:rotate={rotate} >&nbsp Home</button></a>
     
-      <a href="/qrcode#/" on:click={toggleDrawer} on:click={rotateLines} ><button name="Generate QR Code" class="box-slim">&nbsp Generate QR Code</button></a>
+      <a href="/qrcode/" on:click={toggleDrawer} on:click={rotateLines} ><button name="Generate QR Code" class:rotate={rotate} class="box-slim">&nbsp Generate QR Code</button></a>
 
 
-      <a href="/about#/" on:click={toggleDrawer} on:click={rotateLines} ><button name="About" class="box-slim">&nbsp About</button></a>
+      <a href="/about/" on:click={toggleDrawer} on:click={rotateLines} ><button name="About" class=" box-slim" class:rotate={rotate} >&nbsp About</button></a>
       
      
 	
@@ -55,13 +55,13 @@
 <style>
 
 @layer layer-2 {
-.box{
-  width: 50px;
-  height: 50px;
 
+/*.box{
+  width: var(--portion);
+  height: var(--portion);
 
+}*/
 
-}
 
 .box-slim{
   width: 200px;
@@ -73,20 +73,19 @@
   text-align: start;
   color: var(--accent-color);
   font-size: var(--regular-font);
-
-
-
+  opacity: 0.1;
+  transform: translateX(-50px);
 
 }
+
+
+
 
 a {
   text-decoration: none; 
   height: 25px;
-  margin:10px 50px; 
+  margin:10px var(--portion); 
   margin: 100px;
-
-
-
 }
 
 

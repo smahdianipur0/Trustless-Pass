@@ -190,18 +190,6 @@ padding-left: 2ch;
 }
 
 
- .tab__label {
-
- 	 padding: 5px 5px;
- 	 cursor: pointer;
- 	 width: 80px;
- 	 z-index: 2;
- 	 text-align: center;
- 	 display: inline-block;
-	 transition: color 200ms ease-out;
-	 color: var(--focus-color);
-
-}
 
 
 .tab__radio{
@@ -235,7 +223,7 @@ padding-left: 2ch;
 
 button.main{
 	background: var(--btn-main-color);
-	font-size: var(--regular-font);
+	font-size: var(--small-font);
 	padding:var(--default-padding);
   	border-radius: var(--radiu-a);	
   	border: 1px solid  transparent;
@@ -453,7 +441,7 @@ a {
   height: var(--portion); 
   z-index: var(--z-layed-top);
   font-size: var(--regular-font);
-  padding: 2ch;
+  padding: 1ch;
 	}
 
 	
@@ -525,23 +513,23 @@ a {
   .line {
     position: absolute;
     width: var(--small-clickable);
-    height: 0.4ch;
+    height: 0.35ch;
     background: white;
     transition: transform 0.3s ease;
     border-radius: 2ch;
   }
   .line1 {
-    top: calc(50% - 6px); 
+    top: calc(50% - 5px); 
   }
   .line2 {
-    top: calc(50% + 6px); 
+    top: calc(50% + 5px); 
 	}
   .line1.rotate {
-    transform: rotate(-45deg) translate(0, 8.4px);
+    transform: rotate(-45deg) translate(0, 7px);
 
   }
   .line2.rotate {
-    transform: rotate(45deg)translate(0, -8.4px);
+    transform: rotate(45deg)translate(0, -7px);
   }
 
   .box-slim.rotate{
@@ -609,18 +597,34 @@ a {
 /*Tab*/
 
 
+ .tab__label {
+
+ 	 padding: 5px 5px;
+ 	 cursor: pointer;
+ 	 width: 90px;
+ 	 z-index: 2;
+ 	 text-align: center;
+ 	 display: inline-block;
+	 transition: color 200ms ease-out;
+	 color: var(--focus-color);
+	 font-size: var(--regular-font);
+	 margin-bottom: 2ch;
+
+}
+
+
  .tab__indicator {
  	 
 	 position: relative;
 	 display: inline-block;
-	 padding: 2px 5px;
- 	 width: 80px;
+	 padding: 5px 5px;
+ 	 width: 90px;
  	 justify-content: center;
 	 align-items: center;
 	 height: var(--portion);
-	 height: 30px;
+	 height: 25px;
 	 position: absolute;
-	 top: 0;
+	 top: 2.5;
 	 background: var(--btn-main-color);
 	 filter: drop-shadow( var(--drop-shadow));
 	 border-radius: var(--radus-c);
@@ -631,19 +635,19 @@ a {
 }
 
  .tab input#one:checked ~ .tab__indicator { 
-	 transform: translate3d(-40px, 0, 0);
+	 transform: translate3d(-45px, 0, 0);
 }
 
  .tab input#two:checked ~ .tab__indicator {
-	 transform: translate3d(40px, 0, 0);
+	 transform: translate3d(45px, 0, 0);
 }
 
  .tab-2 input#first:checked ~ .tab__indicator { 
-	 transform: translate3d(-40px, 0, 0);
+	 transform: translate3d(-45px, 0, 0);
 }
 
  .tab-2 input#second:checked ~ .tab__indicator {
-	 transform: translate3d(40px, 0, 0);
+	 transform: translate3d(45px, 0, 0);
 }
 
 

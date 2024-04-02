@@ -142,7 +142,7 @@
 <p class="title">Generate Password</p>
 <div class="card-1 dark glass small-shadow" >  
 
-
+<div class="card-2"> </div>
 	<div class="tab" >
 
   <input  type="radio" class="tab__radio" name="tab" id="one"
@@ -160,7 +160,8 @@
 					
 					</div>
 
-									
+					
+				
 					  
 					<input aria-label="password length" class="slider" type="range" 
 							     style="--position:{((password_length-12) / 8) * 100}%"
@@ -259,6 +260,7 @@
 
 </div>
 
+
 </div>
  																		<!--invisible  Card -->	
 
@@ -272,11 +274,12 @@
 <p class="title">Encryption and Decryption</p>
 <div class="card-1 dark glass small-shadow" > 
 <div>
+	<div class="card-2" style="height: 20ch;"> </div>
 	
-			<form autocomplete="off">
+			<form autocomplete="off" >
 				
-				<div class="flex spacing" style="height:var(--portion)">
-					<input type="text" autocomplete="off" class="input dark glass " name="Key"
+				<div class="flex spacing" style="height:var(--portion);">
+					<input type="text" autocomplete="off" class="input dark glass kv " name="Key"
 					 placeholder="Key" bind:value={Key}>
 						 <span class="key-indicator">
 					    {#if Key}
@@ -286,7 +289,7 @@
 				</div>
 				
 					<div class="flex spacing" style="height: 40px;">
-					<input type="text" autocomplete="off" class="input dark glass " name="IV" 
+					<input type="text" autocomplete="off" class="input dark glass kv " name="IV" 
 					placeholder="IV" bind:value={IV}>
 					<span class="key-indicator">
 					    {#if IV}
@@ -435,6 +438,13 @@
   	font-size:var(--big-font); 
   	margin-top: 2ch; 
   	margin-bottom: 2ch; 
+  }
+
+  .kv{
+
+  	background: rgba(5, 5, 5, 0.6);
+  	filter: grayscale(50%);
+  	border-bottom:1px transparent;
   }
   
 

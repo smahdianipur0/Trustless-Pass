@@ -39,12 +39,12 @@
     <div class="drawer dark glass" class:open={isDrawerOpen}>
       
        <br>
-      <a  href="/" on:click={toggleDrawer} on:click={rotateLines}><button name="Home" class="box-slim" class:rotate={rotate} >&nbsp Home</button></a>
+      <a  href="/" on:click={toggleDrawer} on:click={rotateLines}><button name="Home" class="box-slim" class:rotate={rotate} >Home</button></a>
     
-      <a href="/qrcode/" on:click={toggleDrawer} on:click={rotateLines} ><button name="Generate QR Code" class:rotate={rotate} class="box-slim">&nbsp Generate QR Code</button></a>
+      <a href="/qrcode/" on:click={toggleDrawer} on:click={rotateLines} ><button name="Generate QR Code" class:rotate={rotate} class="box-slim">Generate QR Code</button></a>
 
 
-      <a href="/about/" on:click={toggleDrawer} on:click={rotateLines} ><button name="About" class=" box-slim" class:rotate={rotate} >&nbsp About</button></a>
+      <a href="/about/" on:click={toggleDrawer} on:click={rotateLines} ><button name="About" class=" box-slim" class:rotate={rotate} >About</button></a>
       
      
 	
@@ -77,6 +77,8 @@
   opacity: 0.1;
   transform: translateX(-50px);
 
+
+
 }
 
 
@@ -87,6 +89,8 @@ a {
   height: 25px;
   margin:10px var(--portion); 
   margin: 100px;
+
+  
 }
 
 

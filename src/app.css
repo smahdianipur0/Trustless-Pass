@@ -127,8 +127,11 @@ background-color: linear-gradient(135deg, rgba(70,70,70,1) 0%, rgba(55,55,55,1) 
 
 .card-bg{
 	height: 7.5ch;
-	width: 110%;
+	width: 100%;
 	margin-bottom: var(--small-clickable);
+	border-radius: calc(var(--radiu-b) - 0.1ch);
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
 	position: absolute;
 	margin-top: -2ch;
 	background: linear-gradient(125deg, rgba(93,67,177,1) 0%, rgba(84,69,181,1) 10%, rgba(74,70,185,1) 100%);

@@ -6,12 +6,12 @@ import topLevelAwait from "vite-plugin-top-level-await";
 
 const config: UserConfig = {
 	plugins: [sveltekit(),wasm(), topLevelAwait()],
-	//   css: {
-  //   transformer: 'lightningcss',
-  // },
-  // build: {
-  //   cssMinify: 'lightningcss'
-  // }
+	  css: {
+    transformer: 'lightningcss',
+  },
+  build: {
+    cssMinify: 'lightningcss'
+  }
 };
 
 export default config;

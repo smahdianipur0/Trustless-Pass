@@ -122,7 +122,7 @@ background-color: linear-gradient(135deg, rgba(70,70,70,1) 0%, rgba(55,55,55,1) 
 	border-radius: var(--radiu-b);
 	padding: 2ch 0;
 	margin-bottom: var(--small-clickable);
-	overflow: hidden; 	
+	contain: paint;; 	
 }
 
 .card-bg{

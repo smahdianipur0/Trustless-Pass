@@ -139,10 +139,11 @@
 	<title>Generate Password</title>
 
 
-<p class="title">Generate Password</p>
+<p class="title">Generate Password</p> 
 <div class="card-1 dark glass small-shadow" >  
 
 <div class="card-bg"> </div>
+
 
 	<div class="tab" >
 
@@ -236,12 +237,18 @@
 
 					<div class="flex">
 							<form autocomplete="off">
-							<input type="text" autocomplete="off" class="input dark glass" name="firstname" placeholder="password" 
+							<input type="text" autocomplete="off" class="input dark glass" name="firstname" placeholder="Password" 
 							bind:value={password}>
 							</form>
-							
+							 {#if password}
+							 	
+							 
 	      			 <button on:click={toggleToast} use:copy={password}  class="main drop-shadow" > Copy </button>
-					
+	      			 {:else}
+
+	      			 <button class="main disabled" > Copy </button>
+
+							{/if}
 					</div>
 
 
@@ -275,7 +282,7 @@
 <p class="title">Encryption and Decryption</p>
 <div class="card-1 dark glass small-shadow" > 
 <div>
-	<div class="card-bg" style="height: 18.7ch;"> </div>
+	<div class="card-bg" style="height: 18.8ch;"> </div>
 	
 			<form autocomplete="off" >
 				
@@ -418,7 +425,10 @@
 
 
 </div>
-    <div class="toast dark glass" class:opentoast={isToastOpen}> Copied 
+    <div class="toast dark glass" class:opentoast={isToastOpen}>
+    	<span class="gg-check-o"/>
+    	<span>&nbsp Copied</span>
+
 
 </div>
 </div>
@@ -440,17 +450,23 @@
   	font-size:var(--big-font); 
   	margin-top: 2ch; 
   	margin-bottom: 2ch; 
+  	word-wrap: normal ;
+/*  	hyphens: auto;*/
+  	text-align: center;
   }
 
 
 
   .kv{
 
-  	background: rgba(5, 5, 5, 0.6);
-  	filter: grayscale(50%);
-  	border-bottom:0px solid var(--accent-border);
+  	background: rgba(5, 5, 5, 0.5);
+  	border: none;
+  	border-radius: var(--radiu-a);
   }
   
+  .kv:focus{
+  	background: linear-gradient(rgba(25, 25, 25, 0.9),rgba(25, 25, 25, 0.8));
+  }
 
 
   .box {

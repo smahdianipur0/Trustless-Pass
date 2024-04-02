@@ -489,7 +489,6 @@ a {
 	 height: var(--portion); 
 	 padding: 10px;
 	 box-sizing: border-box;
-	 flex-direction: column;
 	 transition: bottom 0.15s ease-out;  
    z-index: var(--z-layer-higher);
 
@@ -500,6 +499,34 @@ a {
 	.opentoast {
   bottom: var(--portion);
 }
+
+  .gg-check-o {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(0.7);
+    width: 22px;
+    height: 22px;
+    border: 2px solid;
+    border-radius: 100px
+}
+.gg-check-o::after {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    left: 3px;
+    top: -1px;
+    width: 6px;
+    height: 10px;
+    border-color: currentColor;
+    border-width: 0 2px 2px 0;
+    border-style: solid;
+    transform-origin: bottom left;
+    transform: rotate(45deg)
+}
+
+
 
 /*Nav Bar*/
 
@@ -691,18 +718,18 @@ a {
 
 .checkmark {
   position: absolute;
-  top: 0;
+  top: 0.2ch;
   left: 0;
   height: 15px;
   width: 15px;
-  background-color: var(--tertiary-color);
+  background: linear-gradient(rgba(0, 0, 0, 0.8),rgba(20, 20, 20	, 0.8));
   border-radius: 3px;
 }
 
 
 
 .check input:checked ~ .checkmark {
-  background-color: var(--accent-border)
+  background: var(--accent-border)
 }
 
 
@@ -718,16 +745,19 @@ a {
 }
 
 .check .checkmark:after {
-  left: 5.5px;
-  top: 0px;
-  width: 5px;
-  height: 12px;
-  border: solid white;
-  border-radius: 2px;
-  border-width: 0 2px 2px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
+
+    box-sizing: border-box;
+    position: absolute;
+    left: 0.25ch;
+    top: -0.25ch;
+    width: 0.5ch;
+    height: 1ch;
+    border-color: currentColor;
+    border-width: 0 2px 2px 0;
+    border-style: solid;
+    transform-origin: bottom left;
+    transform: rotate(45deg);
+
 }
 
 /*checkmark*/

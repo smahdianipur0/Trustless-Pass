@@ -22,7 +22,7 @@
 <div class= "page">
 <div >
 	<title>Generate QR Code</title>
-<p class="title">&nbsp &nbsp Generate QR Code</p>
+<p class="title">Generate QR Code</p>
 <div class="card-1 dark glass small-shadow spacing" >  
 
 

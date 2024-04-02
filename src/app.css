@@ -16,13 +16,14 @@
 	--focus-color : rgba(255, 255, 255, 0.5);
 	--focus-color-gradient : linear-gradient(rgba(255, 255, 255, 0.4),rgba(255, 255, 255, 0.3));
 	--transparent:rgba(250, 255, 255,0);
-	--btn-main-color:linear-gradient(#5d43b1,#4a46b9);
-	--btn-active-color: linear-gradient(#4a46b9,#5d43b1);
+	--btn-main-color:linear-gradient(#6d8be7,#6977e3);
+	--btn-active-color: linear-gradient(#6977e3,#6d8be7);
 	--main-border : rgba(60, 60, 60,1);
-	--accent-border: #4a46b9;
+	--accent-border: #6d8be7;
+	--card-bg-color:linear-gradient(310deg, rgba(103,108,225,1) 0%, rgba(105,119,227,1) 75%, rgba(113,157,235,1) 100%);;
 	--slider-thumb-color : linear-gradient(rgba(25, 25, 25,1),rgba(50, 55, 55,1));
-	--small-shadow: -2px 5px 10px 2px rgba(2, 2, 2,0.4);
-	--drop-shadow:0 0 5px rgba(108, 70, 185,0.8);
+	--small-shadow: 4px 6px 10px 2px rgba(2, 2, 2,0.4);
+	--drop-shadow:0 0 5px rgba(109, 139, 231,0.7);
 	--glass-background: rgba(5, 5, 5, 0.4);
 	--glass-blur: blur(23px) ;
 
@@ -130,8 +131,7 @@ background-color: linear-gradient(135deg, rgba(70,70,70,1) 0%, rgba(55,55,55,1) 
 	border-bottom-left-radius: 0;
 	position: absolute;
 	margin-top: -2ch;
-	background: linear-gradient(125deg, rgba(93,67,177,1) 0%, rgba(84,69,181,1) 10%, rgba(74,70,185,1) 100%);
-
+	background: var(--card-bg-color);
 }
 
 
@@ -737,6 +737,7 @@ a {
   content: "";
   position: absolute;
   display: none;
+
 }
 
 
@@ -748,15 +749,15 @@ a {
 
     box-sizing: border-box;
     position: absolute;
-    left: 0.25ch;
-    top: -0.25ch;
-    width: 0.5ch;
-    height: 1ch;
+    left: 2px;
+    top: -2px;
+    width: 6px;
+    height: 10px;
     border-color: currentColor;
     border-width: 0 2px 2px 0;
     border-style: solid;
     transform-origin: bottom left;
-    transform: rotate(45deg);
+    transform: rotate(45deg)
 
 }
 

@@ -478,7 +478,7 @@
   	margin-bottom: 10px;
   	height: 0.3ch;
   	margin-top: 0.5ch;
-  	background-image: linear-gradient(to right, #f21616, #f02f11, #d47a20, #4678b9, #5d43b1, #7643b1, #5d43b1);
+  	background-image: linear-gradient(to right, #f21616, #f02f11, #d47a20, #719deb, #6977e3, #7643b1, #5d43b1);
   	background-clip: content-box;
   	background-size: 300% 1ch;
   }

@@ -24,7 +24,7 @@
 <div class="fixed-top dark glass flex" >
 
   <div style="font-weight: bold; 
-   margin-inline: calc((var(--portion) - var(--small-clickable)) / 2 )" >{$title}</div>
+   margin-inline: calc((var(--portion) - var(--small-clickable)) / 4 )" >{$title}</div>
 
 
   <div class="box">

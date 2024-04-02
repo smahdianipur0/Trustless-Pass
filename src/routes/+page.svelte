@@ -275,11 +275,11 @@
 <p class="title">Encryption and Decryption</p>
 <div class="card-1 dark glass small-shadow" > 
 <div>
-	<div class="card-bg" style="height: 20ch;"> </div>
+	<div class="card-bg" style="height: 18.7ch;"> </div>
 	
 			<form autocomplete="off" >
 				
-				<div class="flex spacing" style="height:var(--portion);">
+				<div class="flex spacing" >
 					<input type="text" autocomplete="off" class="input dark glass kv " name="Key"
 					 placeholder="Key" bind:value={Key}>
 						 <span class="key-indicator">
@@ -289,7 +289,7 @@
 					   </span>
 				</div>
 				
-					<div class="flex spacing" style="height: 40px;">
+					<div class="flex spacing" style="height:var(--portion);" >
 					<input type="text" autocomplete="off" class="input dark glass kv " name="IV" 
 					placeholder="IV" bind:value={IV}>
 					<span class="key-indicator">
@@ -433,6 +433,7 @@
     transform: translateY(-50%);
     color: #777;
     pointer-events: none;
+    font-size: var(--regular-font);
   }
 
   .result {
@@ -447,7 +448,7 @@
 
   	background: rgba(5, 5, 5, 0.6);
   	filter: grayscale(50%);
-  	border-bottom:1px transparent;
+  	border-bottom:0px solid var(--accent-border);
   }
   
 

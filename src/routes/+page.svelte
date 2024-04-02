@@ -142,7 +142,8 @@
 <p class="title">Generate Password</p>
 <div class="card-1 dark glass small-shadow" >  
 
-<div class="card-2"> </div>
+<div class="card-bg"> </div>
+
 	<div class="tab" >
 
   <input  type="radio" class="tab__radio" name="tab" id="one"
@@ -274,7 +275,7 @@
 <p class="title">Encryption and Decryption</p>
 <div class="card-1 dark glass small-shadow" > 
 <div>
-	<div class="card-2" style="height: 20ch;"> </div>
+	<div class="card-bg" style="height: 20ch;"> </div>
 	
 			<form autocomplete="off" >
 				
@@ -439,6 +440,8 @@
   	margin-top: 2ch; 
   	margin-bottom: 2ch; 
   }
+
+
 
   .kv{
 

@@ -125,19 +125,12 @@ background-color: linear-gradient(135deg, rgba(70,70,70,1) 0%, rgba(55,55,55,1) 
 	overflow: hidden; 	
 }
 
-.card-2{
+.card-bg{
 	height: 7.5ch;
-	width : clamp(200px, 350px, calc(100%)) ;
-	border-radius: calc( var(--radiu-b) -1px);
-	border-bottom-right-radius: 0px;
-	border-bottom-left-radius: 0px;
-	padding: 2ch 0;
+	width: 110%;
 	margin-bottom: var(--small-clickable);
-	overflow: hidden; 
-	
 	position: absolute;
 	margin-top: -2ch;
-	background: rgb(93,67,177);
 	background: linear-gradient(125deg, rgba(93,67,177,1) 0%, rgba(84,69,181,1) 10%, rgba(74,70,185,1) 100%);
 
 }
@@ -641,7 +634,7 @@ a {
 	 height: var(--portion);
 	 height: 32px;
 	 position: absolute;
-	 top: 0px;
+	 top: 1px;
 /*	 background: var(--btn-main-color);*/
 		background: linear-gradient(rgba(25, 25, 25, 0.6),rgba(25, 25, 25, 0.4) );
 /*	 filter: drop-shadow( var(--drop-shadow));*/

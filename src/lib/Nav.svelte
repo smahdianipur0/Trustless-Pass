@@ -21,10 +21,14 @@
 
 
 
-<div class="fixed-top dark glass flex" >
+<div class="fixed-top dark glass flex-nav" >
 
   <div style="font-weight: bold; 
-   margin-inline: calc((var(--portion) - var(--small-clickable)) / 4 )" >{$title}</div>
+   margin-inline: calc((var(--portion) - var(--small-clickable)) / 4 );
+   margin-right: auto;
+   " >{$title}</div>
+
+    <input class="theme-toggle" type="checkbox" id="theme-toggle" name="theme">
 
 
   <div class="box">
@@ -82,8 +86,6 @@
 }
 
 
-
-
 a {
   text-decoration: none; 
   height: 25px;
@@ -92,6 +94,8 @@ a {
 
   
 }
+
+
 
 
 }

@@ -7,7 +7,7 @@
 	--extra-small-font:1rem;
 	--big-font:2rem;
 
-
+	--bg-canv: linear-gradient(135deg, rgba(70,70,70,1) 0%, rgba(55,55,55,1) 14%, rgba(30,30,30,1) 100%);
 	--primary-color: #b9c6d2;
 	--secondary-color: rgba(45, 45, 45,1);
 	--tertiary-color: rgba(30, 30, 30,1);
@@ -20,12 +20,16 @@
 	--btn-active-color: linear-gradient(#6977e3,#6d8be7);
 	--main-border : rgba(60, 60, 60,1);
 	--accent-border: #6d8be7;
-	--card-bg-color:linear-gradient(310deg, rgba(103,108,225,1) 0%, rgba(105,119,227,1) 75%, rgba(113,157,235,1) 100%);;
+	--card-bg-color:linear-gradient(310deg, rgba(103,108,225,1) 0%, rgba(105,119,227,1) 75%, rgba(113,157,235,1) 100%);
 	--slider-thumb-color : linear-gradient(rgba(25, 25, 25,1),rgba(50, 55, 55,1));
 	--small-shadow: 4px 6px 10px 2px rgba(2, 2, 2,0.4);
 	--drop-shadow:0 0 5px rgba(109, 139, 231,0.7);
 	--glass-background: rgba(5, 5, 5, 0.4);
+	--tab-indicator-color: linear-gradient(rgba(25, 25, 25, 0.5),rgba(25, 25, 25, 0.3) );
+	--inout-bg:rgba(5, 5, 5, 0.5);
+	--input-bg-focus:linear-gradient(rgba(25, 25, 25, 0.9),rgba(25, 25, 25, 0.8));
 	--glass-blur: blur(23px) ;
+
 
 	--radiu-a : 0.6ch;
 	--radiu-b : 1.8ch;
@@ -41,6 +45,46 @@
 	--default-padding : 0.7ch 1.5ch;
 
 }
+
+
+:root:has(#theme-toggle:checked) {
+
+	--bg-canv: linear-gradient(135deg, rgba(185,185,185,1) 0%, rgba(200,200,200,1) 14%, rgba(225,225,225,1) 100%);
+  --secondary-color: rgba(210, 210, 210,1);
+  --tertiary-color: rgba(225, 225, 225,1);
+  --select-color:rgba(243, 243, 243,1);
+  --accent-color: rgba(0, 0, 0,1);
+  --focus-color : rgba(0, 0, 0, 0.5);
+  --focus-color-gradient : linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.3));
+  --transparent:rgba(5, 5, 5,0);
+  --main-border : rgba(195, 195, 195,1);
+  --glass-background: rgba(250, 250, 250, 0.4);
+  --slider-thumb-color : linear-gradient(rgba(205, 205, 205,1),rgba(220, 220, 220,1));
+  --tab-indicator-color: linear-gradient(rgba(220, 220, 220, 0.3),rgba(220, 220, 220, 0.5) );
+  --inout-bg:rgba(250, 250, 250, 0.5);
+	--input-bg-focus:linear-gradient(rgba(220, 220, 220, 0.8),rgba(220, 220, 200, 0.9));
+
+
+}
+
+
+.theme-toggle {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  font-size:var(--regular-font);
+  border: none;
+  background-color: transparent;
+}
+
+.theme-toggle:before {
+  content: '☀️'; 
+}
+
+:root:has(#theme-toggle:checked) .theme-toggle:before {
+  content: '🌙'; 
+}
+
 
 
 
@@ -63,7 +107,7 @@
   background-position: 0 0;
   border: 0.1px solid transparent ;
   background: rgb(70,70,70);
-	background: linear-gradient(135deg, rgba(70,70,70,1) 0%, rgba(55,55,55,1) 14%, rgba(30,30,30,1) 100%);
+	background: var(--bg-canv);
 		font-size: var(--regular-font);
 	}
 
@@ -74,7 +118,7 @@ html, body {
 	color: var(--accent-color);
 	background-color: var(--secondary-color);
 
-	color: white;
+	color: var(--accent-color);
 	
 }
 
@@ -155,8 +199,23 @@ background-color: linear-gradient(135deg, rgba(70,70,70,1) 0%, rgba(55,55,55,1) 
 	align-items: center;
 	gap: 1ch;
 
+}
+
+	.flex-nav{
+
+	display: flex;
+	position: relative;
+	align-items: center;
+	gap: 1ch;
 
 }
+
+.flex-nav:first-child {
+	margin-right: auto;
+
+}
+
+
 
 .center {
 	display: flex;
@@ -372,7 +431,7 @@ a {
   	margin-right: auto;
   	margin-top: 1ch;
 
-  	background-color: var(--secondary-color);
+  	background-color: rgba(45, 45, 45,1);
   	background-image: linear-gradient( rgba(180, 185, 185,1),rgba(250, 255, 255,1));
   	background-clip: content-box;
   	background-size: 120% 1ch;
@@ -550,7 +609,7 @@ a {
     position: absolute;
     width: var(--small-clickable);
     height: 0.35ch;
-    background: white;
+    background: var(--accent-color);
     transition: transform 0.3s ease;
     border-radius: 2ch;
   }
@@ -590,6 +649,7 @@ a {
   border-bottom: 1px solid var(--accent-border);
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
+  color: var(--accent-color);
 
 }
 
@@ -617,6 +677,8 @@ a {
   border-bottom: 1px solid var(--accent-border);
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
+  color: var(--accent-color);
+
 }
 
 
@@ -661,7 +723,7 @@ a {
 	 height: 35px;
 	 position: absolute;
 	 top: 0px;
-	background: linear-gradient(rgba(25, 25, 25, 0.5),rgba(25, 25, 25, 0.3) );
+	 background: var(--tab-indicator-color);
 	 border-radius: var(--radus-c);
 	 transition: transform 600ms cubic-bezier(0.02, 0.94, 0.09, 0.97), background 300ms cubic-bezier(0.17, 0.67, 0.14, 1.03);
 

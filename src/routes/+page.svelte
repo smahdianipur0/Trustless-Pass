@@ -451,7 +451,6 @@
   	margin-top: 2ch; 
   	margin-bottom: 2ch; 
   	word-wrap: normal ;
-/*  	hyphens: auto;*/
   	text-align: center;
   }
 
@@ -459,13 +458,13 @@
 
   .kv{
 
-  	background: rgba(5, 5, 5, 0.5);
+  	background: var(--inout-bg);
   	border: none;
   	border-radius: var(--radiu-a);
   }
   
   .kv:focus{
-  	background: linear-gradient(rgba(25, 25, 25, 0.9),rgba(25, 25, 25, 0.8));
+  	background: var(--input-bg-focus);
   }
 
 

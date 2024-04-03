@@ -75,6 +75,11 @@
   font-size:var(--regular-font);
   border: none;
   background-color: transparent;
+  width: var(--small-clickable);
+  height: var(--small-clickable);
+  text-align: center;
+  padding-top: 0.6ch;
+  padding-bottom: 0.6ch ;
 }
 
 .theme-toggle:before {

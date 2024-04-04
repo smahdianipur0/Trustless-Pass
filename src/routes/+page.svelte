@@ -259,7 +259,7 @@
 <br>
 	  {#if password }
 	  <div class="text-box">
-    <p >{guess} &nbsp;</p>
+    <p >{guess}</p>
     <p class={boxClass}></p>
     <p>{strength}</p>
     <p>{strength2}</p>
@@ -282,11 +282,11 @@
 <p class="title">Encryption and Decryption</p>
 <div class="card-1 dark glass small-shadow" > 
 <div>
-	<div class="card-bg" style="height: 18.8ch;"> </div>
+	<div class="card-bg" style="height: 18ch;"> </div>
 	
 			<form autocomplete="off" >
 				
-				<div class="flex spacing" >
+				<div style="margin-bottom: 1ch;" >
 					<input type="text" autocomplete="off" class="input dark glass kv " name="Key"
 					 placeholder="Key" bind:value={Key}>
 						 <span class="key-indicator">
@@ -296,7 +296,7 @@
 					   </span>
 				</div>
 				
-					<div class="flex spacing" style="height:var(--portion);" >
+
 					<input type="text" autocomplete="off" class="input dark glass kv " name="IV" 
 					placeholder="IV" bind:value={IV}>
 					<span class="key-indicator">
@@ -304,7 +304,7 @@
 					      {IV_count}
 					    {/if}
 					   </span>
-				</div>
+
 
 			</form>
 

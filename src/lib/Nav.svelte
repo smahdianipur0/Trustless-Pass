@@ -23,7 +23,7 @@
 
 <div class="fixed-top dark glass flex-nav" >
 
-  <div style="font-weight: bold; 
+  <div style="font-weight: bold; font-size: var(--regular-font);
    margin-inline: calc((var(--portion) - var(--small-clickable)) / 4 );
    margin-right: auto;
    " >{$title}</div>

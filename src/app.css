@@ -5,10 +5,10 @@
 
 	font-family: sans-serif;
 	font-size: 62.5%;
-	--regular-font : 1.8rem;
-	--small-font:1.5rem;
+	--big-font:2.2rem;
+	--regular-font : 1.6rem;
 	--extra-small-font:1rem;
-	--big-font:2rem;
+	
 
 
 	/*Universal Theme*/
@@ -89,11 +89,15 @@
   font-size:var(--regular-font);
   border: none;
   background-color: transparent;
+  text-align: center;
   width: var(--small-clickable);
   height: var(--small-clickable);
-  text-align: center;
-  padding-top: 0.6ch;
-  padding-bottom: 0.6ch ;
+  width: 5ch;
+  height: 2.35ch;
+  line-height: 2.35ch;
+  
+/*  padding-top: 0.6ch;*/
+/*  padding-bottom: 0.6ch ;*/
 }
 
 .theme-toggle:before {
@@ -181,20 +185,18 @@ background-color: linear-gradient(135deg, rgba(70,70,70,1) 0%, rgba(55,55,55,1) 
 	width : auto;
 	border: 1px solid  var(--main-border);
 	border-radius: var(--radiu-b);
-	padding: 2ch 0;
+	padding: 2ch;
 	margin-bottom: var(--small-clickable);
 	contain: paint; 	
 }
 
 .card-bg{
-	height: 7ch;
-	width: 100%;
+
+	height: 7.8ch;
+	width: 115%;
 	margin-bottom: var(--small-clickable);
-	border-radius: calc(var(--radiu-b) - 0.1ch);
-	border-bottom-right-radius: 0;
-	border-bottom-left-radius: 0;
 	position: absolute;
-	margin-top: -2ch;
+	margin: -2ch -2ch;
 	background: var(--card-bg-color);
 
 }
@@ -256,9 +258,6 @@ padding-left: 1.5ch;
 	 display: flex;
 	 flex-wrap: wrap;
 	 position: relative;
-	 width: calc(100% - 4ch);
-	 margin-left: auto;
-	 margin-right: auto;
 	 justify-content: center;
 	 align-items: center;
 
@@ -269,9 +268,6 @@ padding-left: 1.5ch;
 	 display: flex;
 	 flex-wrap: wrap;
 	 position: relative;
-	 width: calc(100% - 4ch);
-	 margin-left: auto;
-	 margin-right: auto;
 	 justify-content: center;
 	 align-items: center;
 
@@ -304,15 +300,15 @@ padding-left: 1.5ch;
 }
 
 .text-box{
-	font-size: var(--small-font);
-	padding: 2ch;
+	font-size: var(--regular-font);
+	margin-bottom: 2ch;
 }
 
 /*button */
 
 button.main{
 	background: var(--btn-main-color);
-	font-size: var(--small-font);
+	font-size: var(--regular-font);
 	padding:var(--default-padding);
   	border-radius: var(--radiu-a);	
   	border: 1px solid  transparent;
@@ -380,7 +376,7 @@ a {
 
   .toggle-text {
     background: none ;
-		font-size: var(--small-font);
+		font-size: var(--regular-font);
 		padding: var(--default-padding);
   	border-radius: var(--radiu-a);	
   	border: 1px solid  var(--focus-color);
@@ -621,24 +617,27 @@ a {
     width: var(--portion);
     height: var(--portion);
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-inline: 20px;
+/*    justify-content: center;*/
+place-content: center;
+
   }
 
   .line {
     position: absolute;
     width: var(--small-clickable);
-    height: 0.35ch;
+    height: 0.36ch;
+
     background: var(--accent-color);
     transition: transform 0.3s ease;
     border-radius: 2ch;
   }
   .line1 {
-    top: calc(50% - 5px); 
+    top: calc(50% - 0.86ch); 
+
+
   }
   .line2 {
-    top: calc(50% + 5px); 
+    top: calc(50% + 0.5ch);
 	}
   .line1.rotate {
     transform: rotate(-45deg) translate(0, 7px);
@@ -717,55 +716,52 @@ a {
 
 
  .tab__label {
-
- 	 padding: 5px 5px;
- 	 cursor: pointer;
- 	 width: 90px;
+ 	padding: 0.28ch 0;
+	font-size: var(--big-font);
+	width: 9ch;	
+ 	cursor: pointer; 
  	 z-index: 2;
  	 text-align: center;
+ 	 place-content: center;
  	 display: inline-block;
 	 transition: color 200ms ease-out;
 	 color: var(--focus-color);
-	 font-size: var(--big-font);
 	 margin-bottom: 2ch;
 
 }
 
 
  .tab__indicator {
- 	 
+
+ 	 font-size: var(--big-font);
+ 	 width: 9ch;
 	 position: relative;
 	 display: inline-block;
-	 padding: 5px 5px;
- 	 width: 90px;
  	 justify-content: center;
 	 align-items: center;
-	 height: var(--portion);
-	 height: 35px;
+	 height: 2.8625ch;
 	 position: absolute;
 	 top: 0px;
 	 background: var(--tab-indicator-color);
 	 border-radius: var(--radus-c);
 	 transition: transform 600ms cubic-bezier(0.02, 0.94, 0.09, 0.97), background 300ms cubic-bezier(0.17, 0.67, 0.14, 1.03);
 
-
-
 }
 
  .tab input#one:checked ~ .tab__indicator { 
-	 transform: translate3d(-45px, 0, 0);
+	 transform: translate3d(-4.5ch, 0, 0);
 }
 
  .tab input#two:checked ~ .tab__indicator {
-	 transform: translate3d(45px, 0, 0);
+	 transform: translate3d(4.5ch, 0, 0);
 }
 
  .tab-2 input#first:checked ~ .tab__indicator { 
-	 transform: translate3d(-45px, 0, 0);
+	 transform: translate3d(-4.5ch, 0, 0);
 }
 
  .tab-2 input#second:checked ~ .tab__indicator {
-	 transform: translate3d(45px, 0, 0);
+	 transform: translate3d(4.5ch, 0, 0);
 }
 
 

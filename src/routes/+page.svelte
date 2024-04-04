@@ -282,7 +282,7 @@
 <p class="title">Encryption and Decryption</p>
 <div class="card-1 dark glass small-shadow" > 
 <div>
-	<div class="card-bg" style="height: 18ch;"> </div>
+	<div class="card-bg" style="height: 18.3ch;"> </div>
 	
 			<form autocomplete="off" >
 				

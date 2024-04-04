@@ -26,19 +26,17 @@
 
 	--bg-canv: linear-gradient(135deg, rgba(70,70,70,1) 0%, rgba(55,55,55,1) 14%, rgba(30,30,30,1) 100%);
 	--secondary-color: rgba(45, 45, 45,1);
-	--tertiary-color: rgba(30, 30, 30,1);
 	--select-color:rgba(12, 12, 12,1);
 	--accent-color: rgba(250, 255, 255,1);
 	--focus-color : rgba(255, 255, 255, 0.5);
 	--focus-color-gradient : linear-gradient(rgba(255, 255, 255, 0.4),rgba(255, 255, 255, 0.3));
-	--transparent:rgba(250, 255, 255,0);
 	--main-border : rgba(60, 60, 60,1);
 	--glass-background: rgba(5, 5, 5, 0.4);
 	--slider-thumb-color : linear-gradient(rgba(25, 25, 25,1),rgba(50, 55, 55,1));
 	--tab-indicator-color: linear-gradient(rgba(25, 25, 25, 0.5),rgba(25, 25, 25, 0.3) );
 	--inout-bg:rgba(5, 5, 5, 0.5);
 	--input-bg-focus:linear-gradient(rgba(25, 25, 25, 0.9),rgba(25, 25, 25, 0.8));
-	--checkmark-bg: linear-gradient(rgba(0, 0, 0, 0.8),rgba(20, 20, 20	, 0.8));
+	--indent-bg: linear-gradient(rgba(0, 0, 0, 0.8),rgba(20, 20, 20	, 0.8));
 	
 	
 
@@ -64,19 +62,18 @@
 
 	--bg-canv: linear-gradient(135deg, rgba(225,225,225,1) 0%, rgba(200,200,200,1) 14%, rgba(190,190,190,1) 100%);
   --secondary-color: rgba(210, 210, 210,1);
-  --tertiary-color: rgba(225, 225, 225,1);
+  --tertiary-color: linear-gradient(rgba(225, 225, 225, 0.8),rgba(255, 255, 255	, 0.8));
   --select-color:rgba(243, 243, 243,1);
   --accent-color: rgba(0, 0, 0,1);
   --focus-color : rgba(0, 0, 0, 0.5);
   --focus-color-gradient : linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.3));
-  --transparent:rgba(5, 5, 5,0);
   --main-border : rgba(195, 195, 195,1);
   --glass-background: rgba(250, 250, 250, 0.4);
   --slider-thumb-color : linear-gradient(rgba(205, 205, 205,1),rgba(220, 220, 220,1));
   --tab-indicator-color: linear-gradient(rgba(220, 220, 220, 0.3),rgba(220, 220, 220, 0.5) );
   --inout-bg:rgba(250, 250, 250, 0.5);
 	--input-bg-focus:linear-gradient(rgba(220, 220, 220, 0.8),rgba(220, 220, 200, 0.9));
-	--checkmark-bg: linear-gradient(rgba(225, 225, 225, 0.8),rgba(255, 255, 255	, 0.8));
+	--indent-bg: linear-gradient(rgba(225, 225, 225, 0.8),rgba(255, 255, 255	, 0.8));
 
 
 }
@@ -148,18 +145,14 @@ html, body {
 
 
 .glass{
-	
-  	-webkit-backdrop-filter: var(--glass-blur);	 
-  	backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);	 
+  backdrop-filter: var(--glass-blur);
 	}
 
 .dark{
 	background-color: var(--glass-background);
 	}
 
-.solid-bg{
-background-color: linear-gradient(135deg, rgba(70,70,70,1) 0%, rgba(55,55,55,1) 14%, rgba(30,30,30,1) 100%);
-}
 
 .drop-shadow{
 	filter: drop-shadow( var(--drop-shadow));
@@ -248,10 +241,6 @@ background-color: linear-gradient(135deg, rgba(70,70,70,1) 0%, rgba(55,55,55,1) 
 
 }
 
-.spacing {
-padding-right: 1.5ch;
-padding-left: 1.5ch;
-}
 
 
 .tab {
@@ -382,7 +371,7 @@ a {
   	border: 1px solid  var(--focus-color);
     user-select: none; 
     cursor: pointer;
-    background: var(--tertiary-color);
+    background: var(--indent-bg);
     color: var(--focus-color);
   }
 
@@ -640,11 +629,11 @@ place-content: center;
     top: calc(50% + 0.5ch);
 	}
   .line1.rotate {
-    transform: rotate(-45deg) translate(0, 7px);
+    transform: rotate(-45deg) translate(0, 0.97ch);
 
   }
   .line2.rotate {
-    transform: rotate(45deg)translate(0, -7px);
+    transform: rotate(45deg)translate(0, -0.97ch);
   }
 
   .box-slim.rotate{
@@ -728,6 +717,7 @@ place-content: center;
 	 color: var(--focus-color);
 	 margin-bottom: 2ch;
 
+
 }
 
 
@@ -776,13 +766,14 @@ place-content: center;
 .check {
   display: block;
   position: relative;
-  padding-left: 25px;
-  margin-bottom: 12px;
+  padding-left: 3ch;
+  margin-bottom: 1ch;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+
 }
 
 
@@ -792,6 +783,7 @@ place-content: center;
   cursor: pointer;
   height: 0;
   width: 0;
+
 }
 
 
@@ -799,16 +791,22 @@ place-content: center;
   position: absolute;
   top: 0.2ch;
   left: 0;
-  height: 15px;
-  width: 15px;
-  background: var(--checkmark-bg);
+  height: 1.8ch;
+  width: 1.8ch;
+  border: 1px solid var(--main-border);
+
+  background: var(--indent-bg);
   border-radius: 3px;
+
 }
 
 
 
 .check input:checked ~ .checkmark {
-  background: var(--accent-border)
+  background: var(--accent-border);
+  border: 0px solid red;
+
+
 }
 
 
@@ -817,11 +815,15 @@ place-content: center;
   position: absolute;
   display: none;
 
+
+
 }
 
 
 .check input:checked ~ .checkmark:after {
   display: block;
+
+
 }
 
 .check .checkmark:after {
@@ -836,7 +838,9 @@ place-content: center;
     border-width: 0 2px 2px 0;
     border-style: solid;
     transform-origin: bottom left;
-    transform: rotate(45deg)
+    transform: rotate(45deg);
+
+
 
 }
 
@@ -844,7 +848,7 @@ place-content: center;
 
 .qr{
 	margin-left: calc(50% - 80px);
-	margin-top: 20px;
+	margin-top: 2ch;
 }
 
 

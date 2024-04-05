@@ -73,7 +73,6 @@
   $: guess = guessable(password);
   $: strength = calculate_password_strength(password);
   $: strength2 = calculate_password_strength2(password);
-
 	$: boxClass = `box ${guess .replace(/\s+/g, '-')}`;
 
 
@@ -281,12 +280,12 @@
 
 <p class="title">Encryption and Decryption</p>
 <div class="card-1 dark glass small-shadow" > 
-<div>
-	<div class="card-bg" style="height: 18.3ch;"> </div>
+
+	<div class="card-bg" style="height: 18ch;"></div> 
 	
 			<form autocomplete="off" >
 				
-				<div style="margin-bottom: 1ch;" >
+				<div class="relative">
 					<input type="text" autocomplete="off" class="input dark glass kv " name="Key"
 					 placeholder="Key" bind:value={Key}>
 						 <span class="key-indicator">
@@ -294,8 +293,10 @@
 					      {Key_count}
 					    {/if}
 					   </span>
-				</div>
+			</div>
 				
+				
+				<div class="relative" style ="margin-bottom: 1ch;"> 
 
 					<input type="text" autocomplete="off" class="input dark glass kv " name="IV" 
 					placeholder="IV" bind:value={IV}>
@@ -305,12 +306,11 @@
 					    {/if}
 					   </span>
 
-
+				</div>
 			</form>
 
-</div>
 
-<br>
+
 	<div class="tab-2">
 
   <input  type="radio" class="tab__radio" name="tab-2" id="first"  checked/>
@@ -437,13 +437,14 @@
 <style>
 
   .key-indicator {
+  	font-size: var(--regular-font);
+  	line-height: 2.35ch;
     position: absolute;
-    right: 35px;
-		top: 50%;
-    transform: translateY(-50%);
+    right: 1.5ch;
+		top: calc( 50% - 1.6ch );
     color: #777;
     pointer-events: none;
-    font-size: var(--regular-font);
+    
   }
 
   .result {
@@ -508,5 +509,8 @@
   	background-position: 64%;
   }
 
+.relative{
+	position: relative;
+}
 
 </style>

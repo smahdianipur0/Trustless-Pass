@@ -137,8 +137,7 @@
 <div>
 	<title>Generate Password</title>
 
-
-<p class="title">Generate Password</p> 
+<p class="title">Generate Password</p>
 <div class="card-1 dark glass small-shadow" >  
 
 <div class="card-bg"> </div>
@@ -281,7 +280,7 @@
 <p class="title">Encryption and Decryption</p>
 <div class="card-1 dark glass small-shadow" > 
 
-	<div class="card-bg" style="height: 18ch;"></div> 
+	<div class="card-bg" style="height: 18.4ch;"></div> 
 	
 			<form autocomplete="off" >
 				
@@ -418,8 +417,8 @@
   		
 
  			 </div>
-				<div class="tab__indicator" /></div>
-
+			
+<div class="tab__indicator" /></div>	
 </div>
 
 
@@ -438,13 +437,13 @@
 
   .key-indicator {
   	font-size: var(--regular-font);
-  	line-height: 2.35ch;
+  	line-height: 2.32ch;
     position: absolute;
     right: 1.5ch;
-		top: calc( 50% - 1.6ch );
+		top: 0.7ch;
     color: #777;
     pointer-events: none;
-    
+
   }
 
   .result {
@@ -509,8 +508,6 @@
   	background-position: 64%;
   }
 
-.relative{
-	position: relative;
-}
+
 
 </style>

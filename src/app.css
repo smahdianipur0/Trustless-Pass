@@ -48,8 +48,8 @@
 	--default-padding : 0.7ch 1.5ch;
 	--slider-width: 97.5% ;
 
-	--radiu-a : 0.6ch;
-	--radiu-b : 1.8ch;
+	--radiu-a : 0.7ch;
+	--radiu-b : 2.1ch;
 	--radus-c : 2.5ch;
 
 	--z-layed-top: 4;
@@ -741,7 +741,7 @@ place-content: center;
 /*	 line-height: 2.7ch;*/
 	 margin: 0.35ch 0 ;
 	 position: absolute;
-	 top:0.09ch;
+	 top:0.05ch;
 	 background: var(--tab-indicator-color);
 	 border-radius: var(--radus-c);
 	 transition: transform 600ms cubic-bezier(0.02, 0.94, 0.09, 0.97), background 300ms cubic-bezier(0.17, 0.67, 0.14, 1.03);
@@ -841,7 +841,7 @@ place-content: center;
 
     box-sizing: border-box;
     position: absolute;
-    left: 0.23ch;
+    left: 0.21ch;
     top: -0.32ch;
     width: 0.75ch;
     height: 1.25ch;

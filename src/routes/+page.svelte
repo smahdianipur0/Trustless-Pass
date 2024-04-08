@@ -147,7 +147,7 @@
 
   <input  type="radio" class="tab__radio" name="tab" id="one"
   bind:group={manualEntry} value={false}  checked/>
-  	<label for="one" class="tab__label">Random</label>
+  	<label for="one" class="tab__label ">Random</label>
   		<div class="tab__contents"> 
 
   																<!-- Tab 1 -->	
@@ -193,7 +193,7 @@
 
 					<div class="tgl-group " >
 
-						<button name="Capitalize" class="toggle-text {capitalize_first_letter ? 'toggle-on' : ''}  " 
+						<button name="Capitalize" class=" toggle-text {capitalize_first_letter ? 'toggle-on' : ''}  " 
 						on:click={f_capitalize_first_letter}>Capitalize</button>
 
 						<button name="Numbers" class="toggle-text {add_number ? 'toggle-on' : ''} " 
@@ -211,11 +211,11 @@
 
 																		<!-- Inputs -->
 			
-				<p class="center" style="font-size:var(--big-font)">{password}</p>
+				<p class="center" style="font-size:var(--big-font); font-weight: 300;">{password}</p>
 
 					<div class="btn-group" style="margin-top: 4ch ">
 
-								<button class="main drop-shadow" on:click={setManualEntryToFalse} > Regenerate </button>
+								<button class="main drop-shadow" on:click={setManualEntryToFalse} >Regenerate  </button>
 	      			 <button on:click={toggleToast} name="Copy" use:copy={password}  class="main drop-shadow" > Copy
 	      			  </button>     	
 
@@ -226,7 +226,7 @@
 																		<!-- Tab 2 -->
 
 
-  <input type="radio" class="tab__radio" name="tab" id="two"
+  <input type="radio" class="tab__radio " name="tab" id="two"
   bind:group={manualEntry} value={true}  />
  		 <label for="two" class="tab__label">Manual</label>
  			 <div class="tab__contents"> 
@@ -252,7 +252,7 @@
 
  			 </div>
 
-  <div class="tab__indicator" /></div>
+  <div class="tab__indicator dent-shadow" /></div>
   																 <!--invisible Card -->
 <br>
 	  {#if password }
@@ -418,7 +418,7 @@
 
  			 </div>
 			
-<div class="tab__indicator" /></div>	
+<div class="tab__indicator dent-shadow" /></div>	
 </div>
 
 

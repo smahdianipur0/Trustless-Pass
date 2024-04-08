@@ -19,6 +19,7 @@
 	--card-bg-color:linear-gradient(290deg, rgba(103,108,225,1) 0%, rgba(105,119,227,1) 65%, rgba(113,157,235,1) 100%);
 	--drop-shadow:0 0 5px rgba(109, 139, 231,0.7);
 	--glass-blur: blur(23px);
+	
 
 
 	/*Dark Theme*/
@@ -90,8 +91,9 @@
   text-align: center;
   font-size: var(--regular-font);
   width: 5ch;
-  height: 2.32ch;
-  line-height: 2.32ch;
+  height: 2ch;
+  line-height: 2ch;
+
 }
 
 .theme-toggle:before {
@@ -155,6 +157,11 @@ html, body {
 
 .relative{
 	position: relative;
+}
+
+.dent-shadow {
+	box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.15) , 
+	-5px -5px 20px rgba(255, 255, 255, 0.15) ;
 }
 
 
@@ -612,7 +619,7 @@ place-content: center;
   .line {
     position: absolute;
     width: var(--small-clickable);
-    height: 0.36ch;
+    height: 0.3ch;
 
     background: var(--accent-color);
     transition: transform 0.3s ease;
@@ -707,6 +714,7 @@ place-content: center;
 
 	font-size: var(--big-font);
 	line-height: 2.7ch;
+	height: 3.4ch;
  	padding: 0.35ch 0;
 	width: 9ch;	
  	cursor: pointer; 
@@ -730,9 +738,10 @@ place-content: center;
  	 justify-content: center;
 	 align-items: center;
 	 height: 2.7ch;
+/*	 line-height: 2.7ch;*/
 	 margin: 0.35ch 0 ;
 	 position: absolute;
-	 top:0.04ch;
+	 top:0.17ch;
 	 background: var(--tab-indicator-color);
 	 border-radius: var(--radus-c);
 	 transition: transform 600ms cubic-bezier(0.02, 0.94, 0.09, 0.97), background 300ms cubic-bezier(0.17, 0.67, 0.14, 1.03);
@@ -832,10 +841,10 @@ place-content: center;
 
     box-sizing: border-box;
     position: absolute;
-    left: 2px;
-    top: -2px;
-    width: 6px;
-    height: 10px;
+    left: 0.23ch;
+    top: -0.32ch;
+    width: 0.75ch;
+    height: 1.25ch;
     border-color: currentColor;
     border-width: 0 2px 2px 0;
     border-style: solid;

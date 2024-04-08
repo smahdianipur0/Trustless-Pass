@@ -24,9 +24,9 @@
 <div class="fixed-top dark glass flex-nav" >
 
   <div style="margin-inline: calc((var(--portion) - var(--small-clickable)) / 4 ); margin-right: auto;"> 
-    <div style="font-weight: bold; font-size:var(--big-font);" >{$title}</div></div>
+    <div style=" font-size:var(--big-font);" >{$title}</div></div>
 
-    <input class="theme-toggle" type="checkbox" id="theme-toggle" name="theme">
+    <input aria-label="theme toggle" class="theme-toggle" type="checkbox" id="theme-toggle" name="theme">
 
 
   <div class="box">

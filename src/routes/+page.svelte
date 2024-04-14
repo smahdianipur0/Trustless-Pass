@@ -235,7 +235,7 @@
 
 					<div class="flex">
 							<form autocomplete="off">
-							<input type="text" autocomplete="off" class="input dark glass" name="firstname" placeholder="Password" 
+							<input type="text" autocomplete="off" class="input dark glass dent-shadow" name="firstname" placeholder="Password" 
 							bind:value={password}>
 							</form>
 							 {#if password}
@@ -252,7 +252,7 @@
 
  			 </div>
 
-  <div class="tab__indicator dent-shadow" /></div>
+  <div class="tab__indicator reflection glass" /></div>
   																 <!--invisible Card -->
 <br>
 	  {#if password }
@@ -285,7 +285,7 @@
 			<form autocomplete="off" >
 				
 				<div class="relative">
-					<input type="text" autocomplete="off" class="input dark glass kv " name="Key"
+					<input type="text" autocomplete="off" class="input dark glass dent-shadow kv " name="Key"
 					 placeholder="Key" bind:value={Key}>
 						 <span class="key-indicator">
 					    {#if Key}
@@ -297,7 +297,7 @@
 				
 				<div class="relative" style ="margin-bottom: 1ch;"> 
 
-					<input type="text" autocomplete="off" class="input dark glass kv " name="IV" 
+					<input type="text" autocomplete="off" class="input dark glass dent-shadow kv " name="IV" 
 					placeholder="IV" bind:value={IV}>
 					<span class="key-indicator">
 					    {#if IV}
@@ -320,14 +320,14 @@
 
 						<label class="check">Use Password
 						  <input type="checkbox" on:click={f_auto_plain} >
-						  <span class="checkmark"></span>
+						  <span class="checkmark "></span>
 						</label>
 						{#if auto_plain == false}
-							<textarea  class="txt-area dark glass" rows="2"
+							<textarea  class="txt-area dark glass dent-shadow" rows="2"
 							 bind:value={plain_text} placeholder="Plain Text"></textarea>
 							 {:else}
 
-							 <textarea  class="txt-area dark glass" rows="2" readonly
+							 <textarea  class="txt-area dark glass dent-shadow" rows="2" readonly
 							 value={plain_text} placeholder="Plain Text"></textarea>
 						{/if}
 
@@ -375,7 +375,7 @@
 
   			
 						
-							 <textarea  class="txt-area dark glass" rows="2" 
+							 <textarea  class="txt-area dark glass dent-shadow" rows="2" 
 							 bind:value={cipher_text} placeholder="Cipher Text"></textarea>
 						
 
@@ -418,7 +418,7 @@
 
  			 </div>
 			
-<div class="tab__indicator dent-shadow" /></div>	
+<div class="tab__indicator reflection glass" /></div>	
 </div>
 
 
@@ -437,12 +437,13 @@
 
   .key-indicator {
   	font-size: var(--regular-font);
-  	line-height: 2.32ch;
+  	line-height: 2ch;
     position: absolute;
     right: 1.5ch;
 		top: 0.7ch;
     color: #777;
     pointer-events: none;
+
 
   }
 

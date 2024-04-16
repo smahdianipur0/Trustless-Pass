@@ -106,7 +106,6 @@
   box-shadow: inset 0.5px 0.5px 1px 0px oklch(1 0 0 / 0.3), 
   						      1px   2px   3px 0px oklch(0 0 0 / 0.2) ;
 
-
 }
 
 .drop-shadow{
@@ -137,7 +136,6 @@
   transform: translateY(calc(var(--portion) * -1 ));
 	opacity: 0;
   transition-duration: 0.2s;
-
 
 }
 
@@ -198,6 +196,7 @@ html, body {
 	gap:2ch;
 	grid-template-columns: repeat(auto-fit, clamp(200px, 350px, 100% ) )  ;
   justify-content: center; 	
+
 	}
 
 
@@ -210,6 +209,7 @@ html, body {
 	padding: 2ch;
 	margin-bottom: var(--small-clickable);
 	contain: paint; 	
+
 }
 
 .card-bg{
@@ -292,7 +292,6 @@ html, body {
 	 justify-content: center;
 	 align-items: center;
 
-
 }
 
 
@@ -334,6 +333,7 @@ button.main{
   	border-radius: var(--radiu-a);	
   	border: 1px solid  transparent;
   	color: var(--accent-color);
+
  	}
 
 button.main:active {
@@ -348,11 +348,13 @@ button.main:hover {
 button.disabled {
   opacity: 0.6;
   cursor: not-allowed;
+
 }
 
 a {
   text-decoration: none; 
   color: var(--accent-color);
+
 }
 
 /*button group*/
@@ -381,6 +383,7 @@ a {
 	border-bottom-left-radius: var(--radiu-a);
 	border-left: 1px solid transparent ;
 	border-right: 1px solid transparent ;
+
 }
 
 .btn-group > :last-child {
@@ -389,6 +392,7 @@ a {
 	border-bottom-right-radius: var(--radiu-a);
 	border-right: 1px solid transparent ;
 	border-left: 1px solid transparent ;
+
 }
 
 /*button group*/
@@ -405,6 +409,7 @@ a {
     cursor: pointer;
     background: var(--indent-bg);
     color: var(--focus-color);
+
   }
 
 
@@ -412,6 +417,7 @@ a {
   	border: 1px solid transparent;
     background: var(--btn-active-color);
     color: var(--accent-color);
+
   }
 
 /*Toggle */
@@ -476,8 +482,6 @@ a {
   	background-position: calc(600% - ( var(--position) * 5) );
 		background-repeat: no-repeat;
 
-
-
 	}
 
 /*.slider:hover {
@@ -495,7 +499,6 @@ a {
 	cursor: pointer;
 	box-shadow: var(--small-shadow);
 
-
 	}
 
 .slider::-moz-range-thumb {
@@ -506,8 +509,7 @@ a {
  	border: 2px solid var(--accent-color) ;
   cursor: pointer;
   box-shadow: var(--small-shadow);
-
-   
+ 
 	}
 
 
@@ -520,8 +522,6 @@ a {
 	font-size: var(--extra-small-font);
 	padding: 2px 0px;
 
-
-
 }
 
 .flex-slider > span {
@@ -531,9 +531,7 @@ a {
    margin-left: auto;
    margin-right: auto;
    z-index: -1;
-
-   
-  
+ 
 }
 /*Range Slider*/
 
@@ -548,6 +546,7 @@ a {
   z-index: var(--z-layed-top);
   font-size: var(--regular-font);
   padding: 1ch;
+
 	}
 
 	
@@ -563,14 +562,15 @@ a {
 	 flex-direction: column;
 	 transition: top 0.15s ease-out;  
    z-index: var(--z-layer-higher);
+
 }
 
 
 
 	.open {
   top:  var(--portion) ;
-
   transition-duration:0.2s;
+
 }
 
 	.toast {
@@ -595,6 +595,7 @@ a {
 
 	.opentoast {
   bottom: var(--portion);
+
 }
 
   .gg-check-o {
@@ -606,7 +607,10 @@ a {
     height: 22px;
     border: 2px solid;
     border-radius: 100px
+
 }
+
+
 .gg-check-o::after {
     content: "";
     display: block;
@@ -621,6 +625,7 @@ a {
     border-style: solid;
     transform-origin: bottom left;
     transform: rotate(45deg)
+
 }
 
 
@@ -639,7 +644,6 @@ a {
     height: var(--portion);
     display: flex;
 		place-content: center;
-
 
   }
 
@@ -673,6 +677,7 @@ a {
   	opacity: 1;
   	transition-delay: 0.2s;
   	transition-duration: 0.2s;
+
   }
 
 /*Menu button*/
@@ -693,7 +698,6 @@ a {
   color: var(--accent-color);
   margin-bottom: 1ch;
 
-
 }
 
 
@@ -702,8 +706,8 @@ a {
 	border: 1px solid var(--primary);
 	border-radius: var(--radiu-a);
 	background-color:var(--select-color) ;
-
 	outline: none;
+
 }
 
 
@@ -729,10 +733,8 @@ a {
 	
 	border: 1px solid var(--primary);
 	border-radius: var(--radiu-a);
-
-
-	
 	outline: none;
+
 }
 
 /*input*/
@@ -749,13 +751,12 @@ a {
  	cursor: pointer; 
  	z-index: 2;
  	text-align: center;
- 	place-content: center;
+ 	justify-content: center;
+	align-items: center;
  	display: inline-block;
 	transition: color 200ms ease-out;
 	color: var(--focus-color);
 	margin-bottom: 2ch;
-
-
 
 }
 
@@ -770,7 +771,7 @@ a {
 	 align-items: center;
 	 height: 2.7ch;
 	 position: absolute;
-	 top:1px;
+	 top:0px;
 	 background: var(--tab-bg) ;
 	 border-radius: var(--radus-c);
 	 transition: transform 600ms cubic-bezier(0.02, 0.94, 0.09, 0.97), background 300ms cubic-bezier(0.17, 0.67, 0.14, 1.03);
@@ -779,24 +780,29 @@ a {
 
  .tab input#one:checked ~ .tab__indicator { 
 	 transform: translate3d(-4.5ch, 0, 0);
+
 }
 
  .tab input#two:checked ~ .tab__indicator {
 	 transform: translate3d(4.5ch, 0, 0);
+
 }
 
  .tab-2 input#first:checked ~ .tab__indicator { 
 	 transform: translate3d(-4.5ch, 0, 0);
+
 }
 
  .tab-2 input#second:checked ~ .tab__indicator {
 	 transform: translate3d(4.5ch, 0, 0);
+
 }
 
 
  .tab input[type="radio"]:not(:checked), 
  .tab input[type="radio"]:checked {
 	 display: none;
+
 }
 
 /*Tab*/
@@ -834,18 +840,14 @@ a {
   height: 16px;
   width: 16px;
   border: 1px solid var(--main-border);
-
   background: var(--indent-bg);
   border-radius: 3px;
 
 }
 
 
-
 .check input:checked ~ .checkmark {
   background: var(--primary);
-
-
 
 }
 
@@ -855,14 +857,11 @@ a {
   position: absolute;
   display: none;
 
-
-
 }
 
 
 .check input:checked ~ .checkmark:after {
   display: block;
-
 
 }
 
@@ -880,8 +879,6 @@ a {
     transform-origin: bottom left;
     transform: rotate(45deg);
 
-
-
 }
 
 /*checkmark*/
@@ -889,6 +886,7 @@ a {
 .qr{
 	margin-left: calc(50% - 80px);
 	margin-top: 2ch;
+
 }
 
 

@@ -53,7 +53,7 @@
 <style>
 
 a{
-color: var(--accent-border);
+color: var(--primary);
 }
 
 	

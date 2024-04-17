@@ -745,19 +745,18 @@ a {
  .tab__label {
 
 	font-size: var(--big-font);
+	display: grid;
 	line-height: 2ch;
 	height: 2.7ch;
 	width: 9ch;	
  	cursor: pointer; 
  	z-index: 2;
  	text-align: center;
- 	justify-content: center;
+ 	justify-self: center;
 	align-items: center;
- 	display: inline-block;
 	transition: color 200ms ease-out;
 	color: var(--focus-color);
 	margin-bottom: 2ch;
-	margin-top: calc(var(--unit ) * 0.3 );
 
 }
 

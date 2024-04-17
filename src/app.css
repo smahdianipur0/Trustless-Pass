@@ -757,8 +757,7 @@ a {
 	transition: color 200ms ease-out;
 	color: var(--focus-color);
 	margin-bottom: 2ch;
-	margin-top: 0.3ch;
-
+	margin-top: calc(var(--unit ) * 0.3 );
 
 }
 

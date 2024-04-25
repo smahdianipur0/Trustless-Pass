@@ -103,8 +103,8 @@
 }
 
 .reflection{
-  box-shadow: inset 0.5px 0.5px 1px 0px oklch(1 0 0 / 0.3), 
-  						      1px   2px   3px 0px oklch(0 0 0 / 0.2) ;
+  box-shadow: inset 0.5px 0.5px 0.2px 0px oklch(1 0 0 / 0.4), 
+  						      1px   2px   2px 0px oklch(0 0 0 / 0.1) ;
 
 }
 
@@ -747,8 +747,8 @@ a {
 	font-size: var(--big-font);
 	display: grid;
 	line-height: 2ch;
-	height: 2.7ch;
-	width: 9ch;	
+	height: 3ch;
+	width: 10ch;	
  	cursor: pointer; 
  	z-index: 2;
  	text-align: center;
@@ -764,12 +764,12 @@ a {
  .tab__indicator {
 
  	 font-size: var(--big-font);
- 	 width: 9ch;
+ 	 width: 10ch;
 	 position: relative;
 	 display: inline-block;
  	 justify-content: center;
 	 align-items: center;
-	 height: 2.7ch;
+	 height: 3ch;
 	 position: absolute;
 	 top:0;
 	 background: var(--tab-bg) ;
@@ -779,22 +779,22 @@ a {
 }
 
  .tab input#one:checked ~ .tab__indicator { 
-	 transform: translate3d(-4.5ch, 0, 0);
+	 transform: translate3d(-5ch, 0, 0);
 
 }
 
  .tab input#two:checked ~ .tab__indicator {
-	 transform: translate3d(4.5ch, 0, 0);
+	 transform: translate3d(5ch, 0, 0);
 
 }
 
  .tab-2 input#first:checked ~ .tab__indicator { 
-	 transform: translate3d(-4.5ch, 0, 0);
+	 transform: translate3d(-5ch, 0, 0);
 
 }
 
  .tab-2 input#second:checked ~ .tab__indicator {
-	 transform: translate3d(4.5ch, 0, 0);
+	 transform: translate3d(5ch, 0, 0);
 
 }
 
@@ -869,12 +869,12 @@ a {
 
     box-sizing: border-box;
     position: absolute;
-    left: 1px;
-    top: -4px;
-    width: 6px;
-    height: 11.5px;
+    left: 2px;
+    top: -2px;
+    width: 5px;
+    height: 10px;
     border-color: currentColor;
-    border-width: 0 2px 2px 0;
+    border-width: 0 1.8px 1.8px 0;
     border-style: solid;
     transform-origin: bottom left;
     transform: rotate(45deg);

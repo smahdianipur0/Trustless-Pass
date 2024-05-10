@@ -206,7 +206,7 @@ html, body {
 	width : auto;
 	border: 1px solid  var(--main-border);
 	border-radius: var(--radiu-b);
-	padding: 1.5ch;
+	padding: 2ch;
 	margin-bottom: var(--small-clickable);
 	contain: paint; 	
 

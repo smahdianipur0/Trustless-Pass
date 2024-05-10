@@ -206,7 +206,7 @@ html, body {
 	width : auto;
 	border: 1px solid  var(--main-border);
 	border-radius: var(--radiu-b);
-	padding: 2ch;
+	padding: 1.5ch;
 	margin-bottom: var(--small-clickable);
 	contain: paint; 	
 
@@ -949,12 +949,12 @@ a {
     box-sizing: border-box;
     position: relative;
     display: block;
-/*     transform: scale(var(--ggs,1)); */
     width: 14px;
     height: 14px;
     border: 2px solid;
     border-right-color: transparent;
-    border-radius: 100px
+    border-radius: 100px;
+    transform: scale(1.15);
 }
 .redo::before {
     content: "";
@@ -972,10 +972,10 @@ a {
 
 .redo_container{
 	border: 1px solid oklch(1 0 0 /0.0);
-	font-size: var(--regular-font);
+	font-size: var(--big-font);
 	border-radius: var(--radiu-a);
 	padding: var(--default-padding );
-	top:calc(2.8ch * 1.3);
+	top: 2.7ch;
 	position: absolute;
 	right: 0ch;
 

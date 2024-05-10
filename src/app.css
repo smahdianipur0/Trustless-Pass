@@ -5,10 +5,9 @@
 	/*Font*/
 
 	font-family: system-ui ;
-	font-size: 62.5%;
-	--big-font:2.2rem;
-	--regular-font : 1.6rem;
-	--extra-small-font:1rem;
+	--big-font:130%;
+	--regular-font : 100%;
+	--extra-small-font:80%;
 	
 
 
@@ -103,7 +102,8 @@
 }
 
 .reflection{
-  box-shadow: inset 0.5px 0.5px 0.2px 0px oklch(1 0 0 / 0.4), 
+	border: 0.2px solid oklch(0.84 0.078 273/ 0.6);
+  box-shadow: inset 0.6px 0.6px 0px 0px oklch(0.84 0.078 273/ 0.6), 
   						      1px   2px   2px 0px oklch(0 0 0 / 0.1) ;
 
 }
@@ -206,7 +206,7 @@ html, body {
 	width : auto;
 	border: 1px solid  var(--main-border);
 	border-radius: var(--radiu-b);
-	padding: 2ch;
+	padding: 1.5ch;
 	margin-bottom: var(--small-clickable);
 	contain: paint; 	
 
@@ -650,26 +650,26 @@ a {
   .line {
     position: absolute;
     width: var(--small-clickable);
-    height: 0.3ch;
+    height: 2px;
 
     background: var(--accent-color);
     transition: transform 0.3s ease;
     border-radius: 2ch;
   }
   .line1 {
-    top: calc(50% - 0.86ch); 
+    top: calc(50% - 5px); 
 
 
   }
   .line2 {
-    top: calc(50% + 0.5ch);
+    top: calc(50% + 5px);
 	}
   .line1.rotate {
-    transform: rotate(-45deg) translate(0, 0.97ch);
+    transform: rotate(-45deg) translate(0, 7.1px);
 
   }
   .line2.rotate {
-    transform: rotate(45deg)translate(0, -0.97ch);
+    transform: rotate(45deg)translate(0, -7.1px);
   }
 
   .box-slim.rotate{
@@ -889,6 +889,104 @@ a {
 
 }
 
+[data-tooltip] {
+	--tooltip-background:var(--cssui-gray-darkest);
+	--tooltip-padding:4px 6px;
+	--tooltip-text-color:var(--cssui-gray-light);
+	--tooltip-fontsize:.75rem;position:relative
+}
 
+
+[data-tooltip]:after,
+[data-tooltip]:before {
+	opacity:0;
+	transition:opacity .3s ease
+}
+
+[data-tooltip]:after {
+	background-color:black;
+	border-radius:var(--radiu-a);
+	bottom:calc(-100% + 2px);
+	color:white;
+	content:attr(title);
+	display:inline-block;
+	font-size:70%;
+	left:50%;
+	padding:var(--default-padding);
+	position:absolute;
+	transform:translateX(-50%);
+	white-space:nowrap;
+	width:auto;
+	box-shadow: var(--small-shadow);
+
+
+}
+
+[data-tooltip]:focus:after,
+[data-tooltip]:focus:before,
+[data-tooltip]:hover:after,
+[data-tooltip]:hover:before{
+	opacity:1
+}
+
+
+
+.copy{
+
+	border: 1px solid oklch(1 0 0 /0.0);
+	border-radius: var(--radiu-a);
+	padding: var(--default-padding );
+
+}
+
+.copy:focus,
+.copy:hover{
+	border: 1px solid oklch(1 0 0 /0.2);
+	border-radius: var(--radiu-a);
+}
+
+.redo {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+/*     transform: scale(var(--ggs,1)); */
+    width: 14px;
+    height: 14px;
+    border: 2px solid;
+    border-right-color: transparent;
+    border-radius: 100px
+}
+.redo::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-top: 2px solid;
+    border-right: 2px solid;
+    top: -3px;
+    right: -1px;
+    transform: rotate(68deg)
+}
+
+.redo_container{
+	border: 1px solid oklch(1 0 0 /0.0);
+	font-size: var(--regular-font);
+	border-radius: var(--radiu-a);
+	padding: var(--default-padding );
+	top:calc(2.9ch * 1.3);
+	position: absolute;
+	right: 0ch;
+
+
+}
+
+.redo_container:focus,
+.redo_container:hover{
+	border: 1px solid oklch(1 0 0 /0.2);
+
+
+}
 
 }

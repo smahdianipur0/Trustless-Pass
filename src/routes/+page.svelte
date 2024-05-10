@@ -203,23 +203,40 @@
 						on:click={f_add_special_char}>!@#$%&...</button>
 					 
 					</div>
-<br> 
-<br> 
+ 
 																<!-- Toggle Group -->
 
 
 
 																		<!-- Inputs -->
 			
-				<p class="center" style="font-size:var(--big-font); font-weight: 300;">{password}</p>
+				
+				<div class="center relative" >
 
-					<div class="btn-group" style="margin-top: 4ch ">
+				<p use:copy={password} on:click={toggleToast} on:keydown={toggleToast}
+						data-tooltip alt="Alt text" title="tap to copy" aria-label="Tooltip message"
+						class=" copy" 
+						style="font-size:var(--big-font); font-weight: 300; 
+						margin-top: 2ch; margin-bottom: 2ch;">
+						{password}</p>
+
+						<div class="redo_container" 
+						on:click={setManualEntryToFalse}
+						on:keydown={setManualEntryToFalse} >
+							<div class="redo " >
+							 
+								
+							</div> 
+						</div>
+					</div>
+
+					<!-- <div class="btn-group" style="margin-top: 4ch ">
 
 								<button class="main drop-shadow" on:click={setManualEntryToFalse} >Regenerate  </button>
 	      			 <button on:click={toggleToast} name="Copy" use:copy={password}  class="main drop-shadow" > Copy
 	      			  </button>     	
 
-					</div>
+					</div> -->
 
   </div>
 

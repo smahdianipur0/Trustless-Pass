@@ -206,7 +206,7 @@ html, body {
 	width : auto;
 	border: 1px solid  var(--main-border);
 	border-radius: var(--radiu-b);
-	padding: 1.5ch;
+	padding: 2ch;
 	margin-bottom: var(--small-clickable);
 	contain: paint; 	
 
@@ -975,7 +975,7 @@ a {
 	font-size: var(--regular-font);
 	border-radius: var(--radiu-a);
 	padding: var(--default-padding );
-	top:calc(2.9ch * 1.3);
+	top:calc(2.8ch * 1.3);
 	position: absolute;
 	right: 0ch;
 

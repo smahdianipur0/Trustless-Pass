@@ -13,7 +13,7 @@
 
 	/*Universal Theme*/
   --primary:oklch(0.65 0.142 268.67);
-  --primery-transparent: oklch(0.65 0.142 268.67 / 0.75)  ;
+  --primery-transparent: oklch(0.65 0.142 268.67 / 0.85)  ;
   --secondary :oklch(0.62 0.152 273.00);
 	--btn-main-color:linear-gradient(var(--primary), var(--secondary));
 	--btn-active-color: linear-gradient(var(--secondary), var(--primary));
@@ -81,7 +81,7 @@
 	--indent-bg: linear-gradient(oklch(0.90 0 0 / 0.8),oklch(1 0 0 / 0.8));
 	--tab-bg:linear-gradient(290deg, oklch(1 0 0 / 0.35) 0%, oklch(1 0 0 / 0.4) 65%, oklch(1 0 0 / 0.5) 100%);
 	--light-reflection: oklch(1 0 0/ 1);
-	--glow:oklch(0.9 0 268.67);
+	--glow:oklch(0.79 0.10 268.67);
 }
 
 .glass{
@@ -406,6 +406,7 @@ a {
 /*Toggle */
 
   .toggle-text {
+  	position: relative;
     background: none ;
 		font-size: var(--regular-font);
 		padding: var(--default-padding);
@@ -466,8 +467,6 @@ a {
 	justify-content: center;
 	align-items: center;
 	height: var(--portion);
-	
-
 }
 
 

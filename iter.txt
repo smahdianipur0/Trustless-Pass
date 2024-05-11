@@ -1,0 +1,61 @@
+/*Toggle */
+
+  .toggle-text {
+    background: none ;
+		font-size: var(--regular-font);
+		padding: var(--default-padding);
+  	border-radius: var(--radiu-a);	
+  	border: 1px solid  var(--focus-color);
+    user-select: none; 
+    cursor: pointer;
+    background: var(--indent-bg);
+    color: var(--focus-color);
+
+  }
+
+
+  .toggle-on {
+  	border: 1px solid transparent;
+    background: var(--btn-active-color);
+    color: var(--accent-color);
+
+  }
+
+/*Toggle */
+
+/*Toggle Group*/
+.tgl-group {
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: var(--portion);
+
+}
+
+.tgl-group > * {
+
+	border: none;
+	border-top:1px solid transparent;
+	border-bottom:1px solid transparent;
+	border-radius: 0px;
+}
+
+
+.tgl-group > :first-child {
+	border-top-left-radius: var(--radiu-a);
+	border-bottom-left-radius: var(--radiu-a);
+	border-left: 1px solid transparent ;
+	border-right: 1px solid transparent ;
+}
+
+.tgl-group > :last-child {
+	border-top-right-radius: var(--radiu-a);
+	border-bottom-right-radius: var(--radiu-a);
+	border-right: 1px solid transparent ;
+	border-left: 1px solid transparent ;
+}
+
+
+
+/*Toggle Group*/

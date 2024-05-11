@@ -13,6 +13,7 @@
 
 	/*Universal Theme*/
   --primary:oklch(0.65 0.142 268.67);
+  --primery-transparent: oklch(0.65 0.142 268.67 / 0.75)  ;
   --secondary :oklch(0.62 0.152 273.00);
 	--btn-main-color:linear-gradient(var(--primary), var(--secondary));
 	--btn-active-color: linear-gradient(var(--secondary), var(--primary));
@@ -34,10 +35,12 @@
 	--slider-thumb-color : linear-gradient(oklch(0.22 0 0),oklch(0.34 0 0));
 	--inout-bg:oklch(0.1 0 0 / 0.5);
 	--input-bg-focus:linear-gradient(oklch(0.22 0 0 / 0.9),oklch(0.22 0 0 / 0.8));
+	--toggle-bg: oklch(0.22 0 0 );
+	--toggle-bg-darker:oklch(0.1 0 0 / 0.5) ;
 	--indent-bg: linear-gradient(oklch(0 0 0 / 0.8),oklch(0.19125 0 0 / 0.8));
 	--tab-bg:linear-gradient(290deg, oklch(0.085 0 0 / 0.5) 0%, oklch(0.085 0 0 / 0.4) 65%, oklch(0.085 0 0 / 0.35) 100%);
-
-	
+	--light-reflection: oklch(0.85 0.035 273/ 0.6);
+	--glow:oklch(0.65 0.142 268.67);
 	
 	/*Sizing*/
 
@@ -73,10 +76,12 @@
   --slider-thumb-color : linear-gradient(oklch(0.85 0 0),oklch(0.90 0 0));
   --inout-bg:oklch(0.98 0 0 / 0.5);
 	--input-bg-focus:linear-gradient(oklch(0.89 0 0 / 0.8),oklch(0.89 0.0268 106.93 / 0.9));
+	--toggle-bg: oklch(0.95 0 0 );
+	--toggle-bg-darker:oklch(0.85 0 0 ) ;
 	--indent-bg: linear-gradient(oklch(0.90 0 0 / 0.8),oklch(1 0 0 / 0.8));
 	--tab-bg:linear-gradient(290deg, oklch(1 0 0 / 0.35) 0%, oklch(1 0 0 / 0.4) 65%, oklch(1 0 0 / 0.5) 100%);
-
-
+	--light-reflection: oklch(1 0 0/ 1);
+	--glow:oklch(0.9 0 268.67);
 }
 
 .glass{
@@ -330,9 +335,10 @@ button.main{
 	background: var(--btn-main-color);
 	font-size: var(--regular-font);
 	padding:var(--default-padding);
-  	border-radius: var(--radiu-a);	
-  	border: 1px solid  transparent;
-  	color: var(--accent-color);
+  border-radius: var(--radiu-a);	
+  border: 1px solid  transparent;
+  color: var(--accent-color);
+  margin-bottom: 1ch;
 
  	}
 
@@ -407,19 +413,50 @@ a {
   	border: 1px solid  var(--focus-color);
     user-select: none; 
     cursor: pointer;
-    background: var(--indent-bg);
     color: var(--focus-color);
+    background-color: var(--toggle-bg);
+    opacity: 1;
+/*     box-shadow: inset 0.6px 0.6px 0px 0px oklch(0.8 0.07 260/ 0.6) ; */
+    filter: drop-shadow(2px 2px 0px var(--toggle-bg-darker) );	
 
   }
+
+  .toggle-text::before{
+	  content: "";
+		position: absolute;
+		inset: 0;
+		z-index: -1;		
+  	background-color: var(--toggle-bg-darker);
+  	scale: 0.65;
+    border-radius: 3ch;
+ 		filter: blur(10px);
+ 		mix-blend-mode: soft-light;
+  }
+
+
 
 
   .toggle-on {
   	border: 1px solid transparent;
-    background: var(--btn-active-color);
+    background-color: var(--primery-transparent);
     color: var(--accent-color);
+		filter: drop-shadow(2px 2px 0px var(--toggle-bg-darker) );
+
 
   }
 
+.toggle-on::before{
+	  content: "";
+		position: absolute;
+		inset: 0;
+		z-index: -1;		
+/* 		background-color: oklch(0.65 0.142 268.67); */
+		background-color: var(--glow);
+  	scale: 0.70;
+    border-radius: 3ch;
+ 		filter: blur(12px);
+
+  }
 /*Toggle */
 
 /*Toggle Group*/
@@ -429,31 +466,73 @@ a {
 	justify-content: center;
 	align-items: center;
 	height: var(--portion);
+	position: relative;
 
 }
+
+
+
 
 .tgl-group > * {
 
 	border: none;
-	border-top:1px solid transparent;
-	border-bottom:1px solid transparent;
+/* 	border-top:0.2px solid oklch(0.84 0.078 273/ 0.6); */
+/* 	border-bottom:0.2px solid oklch(0.84 0.078 273/ 0.6); */
 	border-radius: 0px;
+/* 	box-shadow:  inset 0px 0.6px 0px 0px oklch(0.84 0.078 273/ 0.6); */
+
 }
 
 
 .tgl-group > :first-child {
 	border-top-left-radius: var(--radiu-a);
 	border-bottom-left-radius: var(--radiu-a);
-	border-left: 1px solid transparent ;
-	border-right: 1px solid transparent ;
+/* 	border-left: 0.2px solid oklch(0.84 0.078 273/ 0.6) ; */
+/* 	box-shadow:   inset 0.6px 0.6px 0px 0px oklch(0.84 0.078 273/ 0.6) ; */
+
 }
 
 .tgl-group > :last-child {
 	border-top-right-radius: var(--radiu-a);
 	border-bottom-right-radius: var(--radiu-a);
-	border-right: 1px solid transparent ;
-	border-left: 1px solid transparent ;
+/* 	border-right: 0.2px solid oklch(0.84 0.078 273/ 0.6) ; */
+/* 	box-shadow:   inset 0px 0.6px 0px 0px oklch(0.84 0.078 273/ 0.6) ; */
+
 }
+
+.tgl-group > *::after{
+	border: none;
+	content: "";
+	position: absolute;
+	border-top:0.2px solid var(--light-reflection);
+	border-bottom:0.2px solid var(--light-reflection);
+	box-shadow:  inset 0px 0.6px 0px 0px var(--light-reflection);
+	border-radius: 0px;
+	inset: 0;
+	mix-blend-mode: soft-light;
+
+}
+
+.tgl-group > :first-child::after{
+	content: "";
+	position: absolute;
+	border-top-left-radius: var(--radiu-a);
+	border-bottom-left-radius: var(--radiu-a);
+	border-left: 0.2px solid var(--light-reflection) ;
+	box-shadow:   inset 0.6px 0.6px 0px 0px var(--light-reflection);
+
+}
+
+.tgl-group > :last-child::after{
+	content: "";
+	position: absolute;
+	border-top-right-radius: var(--radiu-a);
+	border-bottom-right-radius: var(--radiu-a);
+	border-right: 0.2px solid var(--light-reflection) ;
+	box-shadow:   inset 0px 0.6px 0px 0px var(--light-reflection) ;
+
+}
+
 
 
 
@@ -936,6 +1015,8 @@ a {
 	border: 1px solid oklch(1 0 0 /0.0);
 	border-radius: var(--radiu-a);
 	padding: var(--default-padding );
+	line-height: 2ch;
+
 
 }
 
@@ -954,7 +1035,7 @@ a {
     border: 2px solid;
     border-right-color: transparent;
     border-radius: 100px;
-    transform: scale(1.15);
+
 }
 .redo::before {
     content: "";
@@ -975,10 +1056,10 @@ a {
 	font-size: var(--big-font);
 	border-radius: var(--radiu-a);
 	padding: var(--default-padding );
-	top: 2.7ch;
+	bottom: 2ch	;
 	position: absolute;
 	right: 0ch;
-
+	line-height: 2ch;
 
 }
 

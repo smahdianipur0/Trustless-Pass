@@ -437,6 +437,7 @@ a {
 
 
   .toggle-on {
+  	position: relative;
   	border: 1px solid transparent;
     background-color: var(--primery-transparent);
     color: var(--accent-color);
@@ -450,7 +451,6 @@ a {
 		position: absolute;
 		inset: 0;
 		z-index: -1;		
-/* 		background-color: oklch(0.65 0.142 268.67); */
 		background-color: var(--glow);
   	scale: 0.70;
     border-radius: 3ch;
@@ -461,12 +461,12 @@ a {
 
 /*Toggle Group*/
 .tgl-group {
-
+	position: relative;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: var(--portion);
-	position: relative;
+	
 
 }
 
@@ -476,10 +476,7 @@ a {
 .tgl-group > * {
 
 	border: none;
-/* 	border-top:0.2px solid oklch(0.84 0.078 273/ 0.6); */
-/* 	border-bottom:0.2px solid oklch(0.84 0.078 273/ 0.6); */
 	border-radius: 0px;
-/* 	box-shadow:  inset 0px 0.6px 0px 0px oklch(0.84 0.078 273/ 0.6); */
 
 }
 
@@ -487,16 +484,13 @@ a {
 .tgl-group > :first-child {
 	border-top-left-radius: var(--radiu-a);
 	border-bottom-left-radius: var(--radiu-a);
-/* 	border-left: 0.2px solid oklch(0.84 0.078 273/ 0.6) ; */
-/* 	box-shadow:   inset 0.6px 0.6px 0px 0px oklch(0.84 0.078 273/ 0.6) ; */
+
 
 }
 
 .tgl-group > :last-child {
 	border-top-right-radius: var(--radiu-a);
 	border-bottom-right-radius: var(--radiu-a);
-/* 	border-right: 0.2px solid oklch(0.84 0.078 273/ 0.6) ; */
-/* 	box-shadow:   inset 0px 0.6px 0px 0px oklch(0.84 0.078 273/ 0.6) ; */
 
 }
 

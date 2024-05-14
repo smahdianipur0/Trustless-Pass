@@ -221,7 +221,6 @@
 						{password}</p>
 
 						<div class="redo_container" 
-						style="font-size:var(--big-font); bottom: 2ch;"
 						on:click={setManualEntryToFalse}
 						on:keydown={setManualEntryToFalse} >
 							<div class="redo " >

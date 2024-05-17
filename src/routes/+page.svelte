@@ -335,9 +335,12 @@
   			<br>
 
 
-						<label class="check">Use Password
-						  <input type="checkbox" on:click={f_auto_plain} >
-						  <span class="checkmark "></span>
+						<label class="check" >
+						  <input type="checkbox" 
+						  style="margin-bottom: 2ch;" 
+						  on:click={f_auto_plain} > Use Password
+						  <!-- <span class="checkmark "></span> -->
+
 						</label>
 						{#if auto_plain == false}
 							<textarea  class="txt-area dark glass dent-shadow" rows="2"

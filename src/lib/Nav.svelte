@@ -26,7 +26,7 @@
   <div style="margin-inline: calc((var(--portion) - var(--small-clickable)) / 4 ); margin-right: auto;"> 
     <div style=" font-size:var(--big-font);" >{$title}</div></div>
 
-    <input aria-label="theme toggle" class="theme-toggle" class:rotate={rotate} type="checkbox" id="theme-toggle" name="theme">
+
 
 
   <div class="box">
@@ -47,6 +47,9 @@
 
 
       <a href="/about/" on:click={toggleDrawer} on:click={rotateLines} ><button name="About" class=" box-slim" class:rotate={rotate} >About</button></a>
+
+
+       <input aria-label="theme toggle" class="theme-toggle box-slim" class:rotate={rotate} type="checkbox" id="theme-toggle" name="theme" style="margin-bottom: 8ch; margin-top: auto;"> 
       
      
 	

@@ -214,7 +214,7 @@
 				<div class="center relative" >
 
 				<p use:copy={password} on:click={toggleToast} on:keydown={toggleToast}
-						data-tooltip alt="Alt text" title="tap to copy" aria-label="Tooltip message"
+						data-tooltip  title="tap to copy" aria-label="Tooltip message"
 						class=" copy" 
 						style="font-size:var(--big-font); font-weight: 300; 
 						margin-top: 2ch; margin-bottom: 2ch;">
@@ -222,13 +222,14 @@
 
 						<div class="redo_container" 
 						on:click={setManualEntryToFalse}
-						on:keydown={setManualEntryToFalse} >
-							<div class="redo " >
-							 
-								
-							</div> 
+						on:keydown={setManualEntryToFalse}
+						style="font-size:var(--big-font); font-weight: 300; 
+						margin-top: 2ch; margin-bottom: 2ch;">
+							↻
+
+
 						</div>
-					</div>
+				</div>
 
 					<!-- <div class="btn-group" style="margin-top: 4ch ">
 

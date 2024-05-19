@@ -61,3 +61,137 @@
 /*Toggle Group*/
 
 --light-reflection: oklch(0.85 0.035 273/ 0.6);
+
+
+
+
+button.main{
+	background: var(--btn-main-color);
+	font-size: var(--regular-font);
+	padding:var(--default-padding);
+  border-radius: var(--radiu-a);	
+  border: 1px solid  transparent;
+  color: var(--accent-color);
+  margin-bottom: 1ch;
+
+ 	}
+
+
+
+ 	<!-- <div class="btn-group" style="margin-top: 4ch ">
+
+								<button class="main drop-shadow" on:click={setManualEntryToFalse} >Regenerate  </button>
+	      			 <button on:click={toggleToast} name="Copy" use:copy={password}  class="main drop-shadow" > Copy
+	      			  </button>     	
+
+					</div> -->
+
+
+
+/* .redo {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    width: 14px;
+    height: 14px;
+    border: 2px solid;
+    border-right-color: transparent;
+    border-radius: 100px;
+    transform: rotate(-30deg)
+
+
+}
+.redo::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-top: 2px solid;
+    border-right: 2px solid;
+    top: -3px;
+    right: -1px;
+    transform: rotate(68deg)
+} */
+
+
+/*checkmark*/
+
+
+
+
+/*
+.check {
+  display: block;
+  position: relative;
+  padding-left: 3ch;
+  margin-bottom: 1ch;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+}
+
+ 
+.check input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+
+}
+ 
+
+.checkmark {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  border: 1px solid var(--main-border);
+  background: var(--indent-bg);
+  border-radius: 3px;
+
+}
+
+
+.check input:checked ~ .checkmark {
+  background: var(--primary);
+
+}
+
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+
+}
+
+
+.check input:checked ~ .checkmark:after {
+  display: block;
+
+}
+
+.check .checkmark:after {
+
+    box-sizing: border-box;
+    position: absolute;
+    left: 2px;
+    top: -2px;
+    width: 5px;
+    height: 10px;
+    border-color: currentColor;
+    border-width: 0 1.8px 1.8px 0;
+    border-style: solid;
+    transform-origin: bottom left;
+    transform: rotate(45deg);
+
+}
+*/
+/*checkmark*/

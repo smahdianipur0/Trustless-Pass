@@ -230,15 +230,6 @@
 
 						</div>
 				</div>
-
-					<!-- <div class="btn-group" style="margin-top: 4ch ">
-
-								<button class="main drop-shadow" on:click={setManualEntryToFalse} >Regenerate  </button>
-	      			 <button on:click={toggleToast} name="Copy" use:copy={password}  class="main drop-shadow" > Copy
-	      			  </button>     	
-
-					</div> -->
-
   </div>
 
 																		<!-- Tab 2 -->
@@ -259,7 +250,7 @@
 							 {#if password}
 							 	
 							 
-	      			 <button on:click={toggleToast} use:copy={password}  class="main drop-shadow" > Copy </button>
+	      			 <button on:click={toggleToast} use:copy={password}  class="main " > Copy </button>
 	      			 {:else}
 
 	      			 <button class="main disabled" > Copy </button>
@@ -300,10 +291,10 @@
 
 	<div class="card-bg" style="height: 18.4ch;"></div> 
 	
-			<form autocomplete="off" >
+			<form autocomplete="off" class="inputGroup">
 				
-				<div class="relative">
-					<input type="text" autocomplete="off" class="input dark glass dent-shadow kv " name="Key"
+				<div class="relative ">
+					<input type="text" autocomplete="off" class="input dark glass dent-shadow k " name="Key"
 					 placeholder="Key" bind:value={Key}>
 						 <span class="key-indicator">
 					    {#if Key}
@@ -315,7 +306,7 @@
 				
 				<div class="relative" style ="margin-bottom: 1ch;"> 
 
-					<input type="text" autocomplete="off" class="input dark glass dent-shadow kv " name="IV" 
+					<input type="text" autocomplete="off" class="input dark glass dent-shadow v " name="IV" 
 					placeholder="IV" bind:value={IV}>
 					<span class="key-indicator">
 					    {#if IV}
@@ -365,8 +356,8 @@
 
 				<div class="btn-group  "> 
 					
-	      	<button on:click={toggleToast} name="Copy" use:copy={result_e}  class="main drop-shadow" > Copy </button>
-					<button name="Show QR Code" class="main drop-shadow" on:click={toggleQR_e}> Show QR Code</button>
+	      	<button on:click={toggleToast} name="Copy" use:copy={result_e}  class="main" > Copy </button>
+					<button name="Show QR Code" class="main " on:click={toggleQR_e}> Show QR Code</button>
 				</div>
 				{:else}
 				<div class="btn-group  "> 
@@ -413,8 +404,8 @@
 
 				<div class="btn-group  "> 
 					
-	      	<button on:click={toggleToast} name="Copy" use:copy={result_d}  class="main drop-shadow" > Copy </button>
-					<button  name="Show QR Code" class="main drop-shadow" on:click={toggleQR_d}> Show QR Code</button>
+	      	<button on:click={toggleToast} name="Copy" use:copy={result_d}  class="main " > Copy </button>
+					<button  name="Show QR Code" class="main " on:click={toggleQR_d}> Show QR Code</button>
 				</div>
 				{:else}
 				<div class="btn-group  "> 
@@ -461,7 +452,7 @@
   	line-height: 2ch;
     position: absolute;
     right: 1.5ch;
-		top: 0.7ch;
+		top: 0.95ch;
     color: #777;
     pointer-events: none;
 
@@ -478,16 +469,36 @@
 
 
 
-  .kv{
+.k{
 
   	background: var(--inout-bg);
   	border: none;
   	border-radius: var(--radiu-a);
+  	border-bottom-left-radius: 0;
+  	border-bottom-right-radius: 0;
+  	padding: 0.95ch 1.5ch;
+  	margin-bottom: 0;
+  	border-bottom: 0.1px solid var(--primary);
+  }
+
+.v{
+
+  	background: var(--inout-bg);
+  	border: none;
+  	border-radius: var(--radiu-a);
+  	border-top-left-radius: 0;
+  	border-top-right-radius: 0;
+  	padding: 0.95ch 1.5ch;
   }
   
-  .kv:focus{
+  
+.k:focus,
+.v:focus{
   	background: var(--input-bg-focus);
   }
+
+
+
 
 
   .box {

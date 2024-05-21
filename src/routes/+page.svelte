@@ -214,13 +214,13 @@
 				<div class="center relative" >
 
 				<p use:copy={password} on:click={toggleToast} on:keydown={toggleToast}
-						data-tooltip  title="tap to copy" aria-label="Tooltip message"
+						
 						class=" copy" 
 						style="font-size:var(--big-font); font-weight: 300; 
 						margin-top: 2ch; margin-bottom: 2ch;">
 						{password}</p>
 
-						<div class="redo_container" 
+					<div class="redo_container" 
 						on:click={setManualEntryToFalse}
 						on:keydown={setManualEntryToFalse}
 						style="font-size:var(--big-font); font-weight: 300; 
@@ -228,7 +228,11 @@
 							↻
 
 
-						</div>
+					</div>
+
+					<p use:copy={password} on:click={toggleToast} on:keydown={toggleToast}
+					class="hint" style="font-size:var(--extra-small-font); font-weight: 300; 
+						margin-top: 2ch; margin-bottom: 2ch;"> tap to copy </p>
 				</div>
   </div>
 
@@ -253,7 +257,7 @@
 	      			 <button on:click={toggleToast} use:copy={password}  class="main " > Copy </button>
 	      			 {:else}
 
-	      			 <button class="main disabled" > Copy </button>
+	      			 <button class="main disabled" disabled> Copy </button>
 
 							{/if}
 					</div>
@@ -330,7 +334,7 @@
 						<label class="check" >
 						  <input type="checkbox" 
 						  style="margin-bottom: 2ch;" 
-						  on:click={f_auto_plain} > Use Password
+						  on:click={f_auto_plain} > Use Password as Plain Text
 						  <!-- <span class="checkmark "></span> -->
 
 						</label>
@@ -344,7 +348,8 @@
 						{/if}
 
 						{#if Key && IV}
-						<p class="center result" >{result_e}</p>
+						<p style="margin-top: 3ch; margin-bottom: 1ch; font-size: var(--extra-small-font); opacity: 0.6;">Encrypted Text : </p>
+						<textarea  class="txt-area" style="border: 0px solid transparent;" rows="2" readonly> {result_e} </textarea>
 
 						{/if}
 
@@ -392,7 +397,8 @@
 						
 
 						{#if Key && IV}
-						<p class="center result" >{result_d}</p>
+						<p style="margin-top: 3ch; margin-bottom: 1ch; font-size: var(--extra-small-font); opacity: 0.6;">Decrypted Text : </p>
+						<textarea  class="txt-area" style="border: 0px solid transparent;" rows="2" readonly> {result_d} </textarea>
 				
 						{/if}
 
@@ -540,6 +546,8 @@
     width: 100%;
   	background-position: 64%;
   }
+
+
 
 
 

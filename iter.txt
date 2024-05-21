@@ -195,3 +195,46 @@ button.main{
 }
 */
 /*checkmark*/
+
+
+
+[data-tooltip] {
+  --tooltip-background:var(--cssui-gray-darkest);
+  --tooltip-padding:4px 6px;
+  --tooltip-text-color:var(--cssui-gray-light);
+  --tooltip-fontsize:.75rem;position:relative
+}
+
+
+[data-tooltip]:after,
+[data-tooltip]:before {
+  opacity:0;
+  transition:opacity .3s ease
+}
+
+[data-tooltip]:after {
+  background-color:black;
+  border-radius:var(--radiu-a);
+  bottom:calc(-100% + 2px);
+  color:white;
+  content:attr(title);
+  display:inline-block;
+  font-size:70%;
+  left:50%;
+  padding:var(--default-padding);
+  position:absolute;
+  transform:translateX(-50%);
+  white-space:nowrap;
+  width:auto;
+  box-shadow: var(--small-shadow);
+
+
+}
+
+[data-tooltip]:focus:after,
+[data-tooltip]:focus:before,
+[data-tooltip]:hover:after,
+[data-tooltip]:hover:before{
+  opacity:1
+}
+

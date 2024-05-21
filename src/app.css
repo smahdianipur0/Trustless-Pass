@@ -49,6 +49,7 @@
 	--portion:6ch;
 	--small-clickable:3.5ch;
 	--default-padding : 0.7ch 1.5ch;
+	--thin-padding: 0.35ch 1ch;
 	--slider-width: 97.5% ;
 
 	--radiu-a : 0.7ch;
@@ -148,11 +149,11 @@
 
 .theme-toggle:before {
 	text-color:white;
-  content: 'Theme: ☀️'; 
+  content: 'Change Theme: ☀️'; 
 }
 
 :root:has(#theme-toggle:checked) .theme-toggle:before {
-  content: 'Theme: 🌙'; 
+  content: 'Change Theme: 🌙'; 
 }
 
 
@@ -371,10 +372,7 @@ button.main::after{
   
 
 button.main:active::before{
-	filter: blur(10px);
-	scale: 0.45;
-	opacity: 0.75;
-	background-color:white;
+	background-color:oklch(1 0 0 / 0);
 }
 
 
@@ -383,6 +381,10 @@ button.main:active::before{
 button.disabled {
   opacity: 0.6;
   cursor: not-allowed;
+}
+
+button.disabled::before{
+	background-color:oklch(1 0 0 / 0);
 }
 
 
@@ -922,53 +924,12 @@ button.menu {
 
 }
 
-[data-tooltip] {
-	--tooltip-background:var(--cssui-gray-darkest);
-	--tooltip-padding:4px 6px;
-	--tooltip-text-color:var(--cssui-gray-light);
-	--tooltip-fontsize:.75rem;position:relative
-}
-
-
-[data-tooltip]:after,
-[data-tooltip]:before {
-	opacity:0;
-	transition:opacity .3s ease
-}
-
-[data-tooltip]:after {
-	background-color:black;
-	border-radius:var(--radiu-a);
-	bottom:calc(-100% + 2px);
-	color:white;
-	content:attr(title);
-	display:inline-block;
-	font-size:70%;
-	left:50%;
-	padding:var(--default-padding);
-	position:absolute;
-	transform:translateX(-50%);
-	white-space:nowrap;
-	width:auto;
-	box-shadow: var(--small-shadow);
-
-
-}
-
-[data-tooltip]:focus:after,
-[data-tooltip]:focus:before,
-[data-tooltip]:hover:after,
-[data-tooltip]:hover:before{
-	opacity:1
-}
-
-
 
 .copy{
 	
 	border: 1px solid oklch(1 0 0 /0.0);
 	border-radius: var(--radiu-a);
-	padding: var(--default-padding );
+	padding: var(--thin-padding);
 	line-height: 2ch;
 
 
@@ -976,7 +937,7 @@ button.menu {
 
 .copy:focus,
 .copy:hover{
-	border: 1px solid oklch(1 0 0 /0.2);
+	border: 1px solid var(--main-border);
 	border-radius: var(--radiu-a);
 }
 
@@ -988,13 +949,26 @@ button.menu {
 	line-height: 2ch;
 	position: absolute;
 	right: 0ch;
-	padding: var(--default-padding );
+	padding: var(--thin-padding);
 
 }
 
 .redo_container:focus,
 .redo_container:hover{
-	border: 1px solid oklch(1 0 0 /0.2);
+	border: 1px solid var(--main-border);
 
 }
+
+.hint{
+	place-content: center;
+	border: 1px solid oklch(1 0 0 /0.0);
+	position: absolute;
+	width: 18ch;
+	right: calc(50% - 9ch );
+	text-align: center;
+	top : 6ch;
+	opacity: 0.6;
+
+}
+
 }

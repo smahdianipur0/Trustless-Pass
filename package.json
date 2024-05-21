@@ -21,6 +21,7 @@
 		"vite-plugin-wasm": "^3.3.0"
 	},
 	"dependencies": {
-		"svelte-qrcode-image": "^1.0.0-rc.2"
+		"svelte-qrcode-image": "^1.0.0-rc.2",
+		"totp-generator": "^1.0.0"
 	}
 }

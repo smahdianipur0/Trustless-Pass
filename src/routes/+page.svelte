@@ -113,16 +113,83 @@
 
 
 
-	//Qr code
-  import { QRCodeImage } from "svelte-qrcode-image";
+//Qr code
+import { QRCodeImage } from "svelte-qrcode-image";
 
-  let showQR_e = false;
-  function toggleQR_e() {
-    showQR_e = !showQR_e }
+let showQR_e = false;
+function toggleQR_e() {
+  showQR_e = !showQR_e }
 
- let showQR_d = false;
-  function toggleQR_d() {
-    showQR_d = !showQR_d }
+let showQR_d = false;
+function toggleQR_d() {
+  showQR_d = !showQR_d };
+
+
+
+//totp
+import { TOTP } from "totp-generator";
+import { writable } from 'svelte/store';
+
+
+const otpStore = writable('');
+let s_key = ''
+let auto_s_key = false;
+function f_auto_s_key() { auto_s_key = !auto_s_key; } 
+
+
+$: if (auto_s_key) {s_key = plain_text; } 
+else { s_key = ''; }
+
+
+
+function updateOtpStore() {
+  try {
+    const { otp, expires } = TOTP.generate(s_key);
+    otpStore.set(otp.toString());
+  } catch (error) {
+    otpStore.set('The provided key is not valid.');
+  }
+}
+
+setInterval(updateOtpStore, 100);
+
+
+//d_totp
+const d_otpStore = writable('');
+let d_s_key = ''
+let d_auto_s_key = false;
+function f_d_auto_s_key() { d_auto_s_key = !d_auto_s_key; } 
+
+
+$: if (d_auto_s_key) {d_s_key = result_d; } 
+else { d_s_key = ''; }
+
+
+
+function d_updateOtpStore() {
+  try {
+    const { otp, expires } = TOTP.generate(d_s_key);
+    d_otpStore.set(otp.toString());
+  } catch (error) {
+    d_otpStore.set('The provided key is not valid.');
+  }
+}
+
+setInterval(d_updateOtpStore, 100);
+
+
+
+
+//Timer
+let currentTime = Math.round(new Date().getTime() / 1000);
+let remainingSeconds = 30 - (currentTime % 30);
+
+const interval = setInterval(() => {
+    currentTime = Math.round(new Date().getTime() / 1000);
+    remainingSeconds = 30 - (currentTime % 30);
+  }, 1000);
+
+$: final = remainingSeconds.toString().padStart(2, '0');
 
 
 
@@ -134,8 +201,11 @@
 
 													  			 <!-- Card -->
 
+
+
 <div>
 	<title>Generate Password</title>
+	
 
 <p class="title">Generate Password</p>
 <div class="card-1 dark glass small-shadow" >  
@@ -335,7 +405,7 @@
 						  <input type="checkbox" 
 						  style="margin-bottom: 2ch;" 
 						  on:click={f_auto_plain} > Use Password as Plain Text
-						  <!-- <span class="checkmark "></span> -->
+		
 
 						</label>
 						{#if auto_plain == false}
@@ -380,10 +450,35 @@
 
 					<QRCodeImage class="qr" text={result_e} width={160} height={160} margin={1} />
 					{/if}
- </div>			
 
+					
+ </div>		
+ 		<label class="check"   >
+		  <input type="checkbox"  
+		  
+		  on:click={f_auto_s_key} > Use plain text as key for varification code
+		</label>	
 
+<div style="margin-top: 3ch;">
+		{#if auto_s_key && plain_text}
+			{#if $d_otpStore === "The provided key is not valid."}
+				<div class="center" style="font-size: var(--big-font); font-weight: 300;">
+				<div id ="totp">{$d_otpStore}</div>
+				</div>
+			{/if}
+			{#if $otpStore !== "The provided key is not valid."}
+  		<div class="flex" style="font-size: var(--big-font); font-weight: 300;">
+			<div>Varification Code:</div>	<div id ="totp">{$otpStore}</div>
+			</div>
+			{/if}
+			{#if $otpStore !== "The provided key is not valid."}
+
+			<p style="font-size: var(--extra-small-font); opacity:0.6">This code is valid for the next {final} seconds</p>
+			{/if}
+		{/if}
+</div>
   		</div>
+		
 
   <input type="radio" class="tab__radio" name="tab-2" id="second" />
  		 <label for="second" class="tab__label">Decrypt</label>
@@ -429,9 +524,34 @@
 
 					<QRCodeImage class="qr" text={result_d} width={160} height={160} margin={1} />
 					{/if}
+
+
  </div>			
+<label class="check"  >
+		  <input type="checkbox" 
+		   
+		  on:click={f_d_auto_s_key} > Use Decrypted text as key for varification code
+		</label>
 
+<div style="margin-top: 3ch;">
 
+		{#if d_auto_s_key && cipher_text && Key && IV}
+			{#if $d_otpStore === "The provided key is not valid."}
+				<div class="center" style="font-size: var(--big-font); font-weight: 300;">
+				<div id ="totp">{$d_otpStore}</div>
+				</div>
+			{/if}
+			{#if $d_otpStore !== "The provided key is not valid."}
+  		<div class="flex" style="font-size: var(--big-font); font-weight: 300;">
+			<div>Varification Code:</div>	<div id ="totp">{$d_otpStore}</div>
+			</div>
+			{/if}
+			{#if $d_otpStore !== "The provided key is not valid."}
+
+			<p style="font-size: var(--extra-small-font); opacity:0.6">This code is valid for the next {final} seconds</p>
+			{/if}
+		{/if}
+</div>
   		
 
  			 </div>

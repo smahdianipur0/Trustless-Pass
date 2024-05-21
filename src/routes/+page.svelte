@@ -130,6 +130,8 @@ function toggleQR_d() {
 import { TOTP } from "totp-generator";
 import { writable } from 'svelte/store';
 
+let d_tab = false;
+
 
 const otpStore = writable('');
 let s_key = ''
@@ -395,8 +397,9 @@ $: final = remainingSeconds.toString().padStart(2, '0');
 
 	<div class="tab-2">
 
-  <input  type="radio" class="tab__radio" name="tab-2" id="first"  checked/>
-  	<label for="first" class="tab__label">Encrypt</label>
+  <input  type="radio" class="tab__radio" name="tab-2" id="first"
+   bind:group={d_tab} value={false}  checked  />
+  	<label for="first" class="tab__label" >Encrypt</label>
   		<div class="tab__contents"> 
   			<br>
 
@@ -453,34 +456,12 @@ $: final = remainingSeconds.toString().padStart(2, '0');
 
 					
  </div>		
- 		<label class="check"   >
-		  <input type="checkbox"  
-		  
-		  on:click={f_auto_s_key} > Use plain text as key for varification code
-		</label>	
 
-<div style="margin-top: 3ch;">
-		{#if auto_s_key && plain_text}
-			{#if $d_otpStore === "The provided key is not valid."}
-				<div class="center" style="font-size: var(--big-font); font-weight: 300;">
-				<div id ="totp">{$d_otpStore}</div>
-				</div>
-			{/if}
-			{#if $otpStore !== "The provided key is not valid."}
-  		<div class="flex" style="font-size: var(--big-font); font-weight: 300;">
-			<div>Varification Code:</div>	<div id ="totp">{$otpStore}</div>
-			</div>
-			{/if}
-			{#if $otpStore !== "The provided key is not valid."}
-
-			<p style="font-size: var(--extra-small-font); opacity:0.6">This code is valid for the next {final} seconds</p>
-			{/if}
-		{/if}
-</div>
   		</div>
 		
 
-  <input type="radio" class="tab__radio" name="tab-2" id="second" />
+  <input type="radio" class="tab__radio" name="tab-2" id="second"
+  bind:group={d_tab} value={true} />
  		 <label for="second" class="tab__label">Decrypt</label>
  			 <div class="tab__contents"> 
 			<br>
@@ -527,34 +508,12 @@ $: final = remainingSeconds.toString().padStart(2, '0');
 
 
  </div>			
-<label class="check"  >
-		  <input type="checkbox" 
-		   
-		  on:click={f_d_auto_s_key} > Use Decrypted text as key for varification code
-		</label>
 
-<div style="margin-top: 3ch;">
-
-		{#if d_auto_s_key && cipher_text && Key && IV}
-			{#if $d_otpStore === "The provided key is not valid."}
-				<div class="center" style="font-size: var(--big-font); font-weight: 300;">
-				<div id ="totp">{$d_otpStore}</div>
-				</div>
-			{/if}
-			{#if $d_otpStore !== "The provided key is not valid."}
-  		<div class="flex" style="font-size: var(--big-font); font-weight: 300;">
-			<div>Varification Code:</div>	<div id ="totp">{$d_otpStore}</div>
-			</div>
-			{/if}
-			{#if $d_otpStore !== "The provided key is not valid."}
-
-			<p style="font-size: var(--extra-small-font); opacity:0.6">This code is valid for the next {final} seconds</p>
-			{/if}
-		{/if}
-</div>
   		
-
  			 </div>
+
+
+
 			
 <div class="tab__indicator reflection glass" /></div>	
 </div>
@@ -568,6 +527,76 @@ $: final = remainingSeconds.toString().padStart(2, '0');
 
 
 </div>
+
+<div>
+<p class="title">Varification Code</p>
+<div class="card-1 dark glass small-shadow" > 
+
+ 	{#if d_tab}
+
+<label class="check"  >
+		  <input type="checkbox" 
+		   
+		  on:click={f_d_auto_s_key} > Use Decrypted text as key for varification code
+		</label>
+
+<div style="margin-top: 3ch;">
+
+		{#if d_auto_s_key && cipher_text && Key && IV}
+			{#if $d_otpStore === "The provided key is not valid."}
+				<div class="center" style="font-size: var(--big-font); font-weight: 300;">
+				<div id ="totp">The provided key is not valid.</div>
+				</div>
+			{/if}
+			{#if $d_otpStore !== "The provided key is not valid."}
+  		<div class="flex" style="font-size: var(--big-font); font-weight: 300;">
+			<div>Varification Code:</div>	<div id ="totp">{$d_otpStore}</div>
+			</div>
+			{/if}
+			{#if $d_otpStore !== "The provided key is not valid."}
+
+			<p style="font-size: var(--extra-small-font); opacity:0.6">This code is valid for the next {final} seconds</p>
+			{/if}
+		{/if}
+</div>
+
+	{:else}
+
+ 		<label class="check"   >
+		  <input type="checkbox"  
+		  
+		  on:click={f_auto_s_key} > Use plain text as key for varification code
+		</label>	
+
+<div style="margin-top: 3ch;">
+		{#if auto_s_key && plain_text}
+			{#if $otpStore === "The provided key is not valid."}
+				<div class="center" style="font-size: var(--big-font); font-weight: 300;">
+				<div id ="totp">The provided key is not valid.</div>
+				</div>
+			{/if}
+			{#if $otpStore !== "The provided key is not valid."}
+  		<div class="flex" style="font-size: var(--big-font); font-weight: 300;">
+			<div>Varification Code:</div>	<div id ="totp">{$otpStore}</div>
+			</div>
+			{/if}
+			{#if $otpStore !== "The provided key is not valid."}
+
+			<p style="font-size: var(--extra-small-font); opacity:0.6">This code is valid for the next {final} seconds</p>
+			{/if}
+		{/if}
+</div>
+
+	{/if} 
+
+
+
+
+</div>
+
+</div>
+
+
 </div>
 
 

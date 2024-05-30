@@ -16,7 +16,6 @@
   --primary:oklch(0.65 0.142 268.67);
   --primery-transparent: oklch(0.65 0.185 268.67 / 0.75)  ;
   --secondary :oklch(0.62 0.152 273.00);
-	--btn-active-color: linear-gradient(var(--secondary), var(--primary));
 	--card-bg-color:linear-gradient(290deg, oklch(0.58742 0.17443 277.74) 0%, oklch(0.61088 0.16236 274.98) 65%, oklch(0.69733 0.125 261.28) 100%);
 	--drop-shadow:0 0 5px oklch(0.65554 0.14152 268.67 / 0.7);
 	--light-reflection: oklch(1 0 0/ 0.65);
@@ -44,7 +43,6 @@
 	
 	/*Sizing*/
 
-	--unit:min(1ch , 0.75cap);
 
 	--portion:6ch;
 	--small-clickable:3.5ch;
